@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,14 +8,19 @@
 <title>KP Hazara License Verification Portal</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   font-family:Arial,sans-serif;
   color:#222;
-  background:#f5f8fa
+  background:#f5f8fa;
 }
+
+/* HEADER */
 
 .top{
   height:112px;
@@ -23,7 +29,7 @@ body{
   align-items:center;
   justify-content:space-between;
   padding:0 8%;
-  box-shadow:0 1px 5px #bbb
+  box-shadow:0 1px 5px #bbb;
 }
 
 .brand{
@@ -37,19 +43,22 @@ body{
   text-align:center;
   font-size:11px;
   font-weight:700;
-  border:6px solid #e3262e
+  border:6px solid #e3262e;
 }
 
 .menu{
   font-size:34px;
-  font-weight:bold
+  font-weight:bold;
 }
+
+
+/* SEARCH AREA */
 
 .hero{
   position:relative;
   background:#9eacc6;
   padding:48px 5% 55px;
-  min-height:410px
+  min-height:410px;
 }
 
 .hero:after{
@@ -60,12 +69,12 @@ body{
   font-size:150px;
   font-weight:bold;
   color:#fff;
-  opacity:.08
+  opacity:.08;
 }
 
 .hero>*{
   position:relative;
-  z-index:1
+  z-index:1;
 }
 
 .hero h1{
@@ -73,19 +82,19 @@ body{
   color:#c91d1d;
   font-family:Georgia,serif;
   font-size:36px;
-  margin:0 0 70px
+  margin:0 0 70px;
 }
 
 .form{
   max-width:760px;
-  margin:auto
+  margin:auto;
 }
 
 .form label{
   display:block;
   color:red;
   font-size:20px;
-  margin-bottom:12px
+  margin-bottom:12px;
 }
 
 .form input{
@@ -95,7 +104,7 @@ body{
   border-radius:28px;
   padding:0 20px;
   font-size:18px;
-  outline:none
+  outline:none;
 }
 
 .form button{
@@ -107,8 +116,11 @@ body{
   padding:13px 24px;
   font-size:18px;
   box-shadow:0 1px 3px #777;
-  cursor:pointer
+  cursor:pointer;
 }
+
+
+/* SEARCH RESULT */
 
 .result{
   max-width:760px;
@@ -117,36 +129,39 @@ body{
   border-radius:14px;
   padding:20px;
   display:none;
-  box-shadow:0 3px 12px #8793a3
+  box-shadow:0 3px 12px #8793a3;
 }
 
 .result h3{
   margin:0 0 14px;
-  color:#b71919
+  color:#b71919;
 }
 
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px
+  gap:10px;
 }
 
 .item{
   padding:10px;
   background:#f3f5f8;
-  border-radius:7px
+  border-radius:7px;
 }
 
 .item b{
   display:block;
   font-size:12px;
   color:#6b7280;
-  margin-bottom:4px
+  margin-bottom:4px;
 }
+
+
+/* CARDS */
 
 .cards{
   padding:40px 3%;
-  background:#eef4f6
+  background:#eef4f6;
 }
 
 .card{
@@ -160,7 +175,7 @@ body{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  text-align:center
+  text-align:center;
 }
 
 .badge{
@@ -173,23 +188,23 @@ body{
   display:grid;
   place-items:center;
   font-weight:bold;
-  font-size:22px
+  font-size:22px;
 }
 
 .card h2{
   color:#b91616;
   font-size:22px;
-  margin:16px 0 4px
+  margin:16px 0 4px;
 }
 
 .card p{
   margin:0;
   color:#777;
-  font-size:18px
+  font-size:18px;
 }
 
 .alt{
-  background:#f5f5f5
+  background:#f5f5f5;
 }
 
 .school{
@@ -216,60 +231,109 @@ body{
   background:#111;
   display:grid;
   place-items:center;
-  color:#fff
+  color:#fff;
 }
+
+
+/* ABOUT SECTION */
 
 .about{
   background:#178bc5;
+  padding:38px 3%;
   color:#d9edf8;
-  padding:38px 5%
 }
 
-.about .inner{
-  max-width:760px;
-  margin:auto
+.about-row{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1.7fr;
+  gap:40px;
+  align-items:start;
 }
 
-.about h2{
+.about-column h2,
+.features-column h2{
   font-family:Georgia,serif;
   color:#c81717;
   font-size:34px;
   margin:0 0 25px;
-  text-shadow:0 2px 2px #555
+  text-shadow:0 2px 2px #555;
 }
 
-.about p{
+.about-column p,
+.features-column p{
   font-size:17px;
-  line-height:1.35
+  line-height:1.35;
+  margin:0;
 }
 
-.photo{
+
+/* IMAGE SLIDER */
+
+.photo-column{
+  width:100%;
+}
+
+.slider{
+  position:relative;
+  width:100%;
   height:330px;
-  margin-top:28px;
+  overflow:hidden;
   border-radius:4px;
-  background:linear-gradient(135deg,#526a75,#c9d0d2);
-  display:grid;
-  place-items:center;
+  background:#126fa0;
+}
+
+.slide{
+  display:none;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.slide.active{
+  display:block;
+}
+
+.prev,
+.next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  border:0;
+  background:rgba(0,0,0,.35);
   color:#fff;
   font-size:30px;
-  text-align:center;
-  padding:30px
+  padding:8px 12px;
+  cursor:pointer;
+  z-index:5;
 }
+
+.prev{
+  left:5px;
+}
+
+.next{
+  right:5px;
+}
+
+
+/* SOCIAL */
 
 .social{
   background:#fff;
   text-align:center;
-  padding:25px 20px 65px
+  padding:25px 20px 65px;
 }
 
 .social h2{
-  color:#253046
+  color:#253046;
 }
 
 .icons{
   display:flex;
   justify-content:center;
-  gap:35px
+  gap:35px;
 }
 
 .icon{
@@ -281,8 +345,11 @@ body{
   display:grid;
   place-items:center;
   font-weight:bold;
-  font-size:22px
+  font-size:22px;
 }
+
+
+/* FOOTER */
 
 .footer{
   background:#fff;
@@ -290,65 +357,81 @@ body{
   padding:35px;
   text-align:center;
   color:#6b7280;
-  font-size:14px
+  font-size:14px;
 }
 
-.notice{
-  font-size:13px;
-  text-align:center;
-  margin-top:18px;
-  color:#fff;
-  opacity:.9
-}
 
-@media(max-width:600px){
-  .top{height:85px}
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .top{
+    height:85px;
+  }
 
   .brand{
     width:54px;
-    height:54px
+    height:54px;
   }
 
   .hero{
-    padding-top:35px
+    padding-top:35px;
   }
 
   .hero h1{
     font-size:27px;
-    margin-bottom:55px
+    margin-bottom:55px;
   }
 
   .grid{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
-  .about h2{
-    font-size:29px
+  .about-row{
+    grid-template-columns:1fr;
+    gap:30px;
   }
 
-  .photo{
-    height:240px
+  .about-column h2,
+  .features-column h2{
+    font-size:29px;
+  }
+
+  .slider{
+    height:260px;
   }
 
   .card{
-    min-height:230px
+    min-height:230px;
   }
 
   .form label{
-    font-size:17px
+    font-size:17px;
   }
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header class="top">
-  <div class="brand">
-    TRAFFIC<br>LEARNING
-  </div>
-  <div class="menu">☰</div>
+
+<div class="brand">
+TRAFFIC<br>LEARNING
+</div>
+
+<div class="menu">☰</div>
+
 </header>
+
+
+
+<!-- SEARCH -->
 
 <section class="hero">
 
@@ -359,20 +442,25 @@ body{
 <label>License Number *</label>
 
 <input
-  id="lic"
-  autocomplete="off"
-  placeholder="Type License Number"
+id="lic"
+autocomplete="off"
+placeholder="Type License Number"
 >
 
 <button onclick="searchRecord()">Submit</button>
 
 <div id="result" class="result"></div>
 
-
 </div>
+
 </section>
 
+
+
+<!-- CARDS -->
+
 <section class="cards">
+
 
 <div class="card">
 
@@ -383,6 +471,7 @@ body{
 <p>Traffic Learning Department</p>
 
 </div>
+
 
 
 <div class="card alt">
@@ -398,6 +487,7 @@ ROAD<br>SAFETY
 </div>
 
 
+
 <div class="card">
 
 <div style="
@@ -408,7 +498,7 @@ background:#16c6a3;
 color:#fff;
 display:grid;
 place-items:center;
-font-size:44px
+font-size:44px;
 ">
 ✓
 </div>
@@ -419,54 +509,119 @@ font-size:44px
 
 </div>
 
+
 </section>
 
+
+
+<!-- ABOUT + FEATURES + SLIDER -->
 
 <section class="about">
 
-<div class="inner">
+<div class="about-row">
+
+
+<!-- ABOUT US -->
+
+<div class="about-column">
 
 <h2>About Us</h2>
 
-
-  <h2>About Us</h2>
-
 <p>
-Driving License Issuance Management System (DLIMS) Phase-II automates the processes for driving license issuance, renewal and upgrades. These activities are carried out throughout the KP Hazara. This system provides quick processing service to public and up to date statistics to the authorities by using state of the art technology and equipment. The system redefines the issuance process of all types of licenses by using a centralized network.
+Driving License Issuance Management System (DLIMS) Phase-II automates
+the processes for driving license issuance, renewal and upgrades.
+These activities are carried out throughout the KP Hazara.
+This system provides quick processing service to public and up to date
+statistics to the authorities by using state of the art technology
+and equipment. The system redefines the issuance process of all types
+of licenses by using a centralized network.
 </p>
 
-<h2 style="margin-top:30px">
-Key Features
-</h2>
+</div>
 
-<h2 style="margin-top:30px">
-Key Features
-</h2>
 
-  
+
+<!-- KEY FEATURES -->
+
+<div class="features-column">
+
+<h2>Key Features</h2>
 
 <p>
+
 Centralized Issuance and Management of Driving Licenses
+
 <br><br>
 
 Centralized Database of Licensing System of whole KP Hazara
+
 <br><br>
 
 Centralized Driving License Printing Facility
+
 <br><br>
 
-Delivery of Issued Licenses through courier and basing on that verification of the Applicant can be made easy
+Delivery of Issued Licenses through courier and basing on that
+verification of the Applicant can be made easy
+
 </p>
-  
 
-<div class="photo">
-TRAFFIC SAFETY<br>
-TRAINING &amp; ROAD RULES
+</div>
+
+
+
+<!-- 3 PICTURE SLIDER -->
+
+<div class="photo-column">
+
+<div class="slider">
+
+<img
+src="IMG_0944.jpeg"
+class="slide active"
+alt="Traffic Department"
+>
+
+<img
+src="IMG_0945.jpeg"
+class="slide"
+alt="Traffic Department"
+>
+
+<img
+src="IMG_0946.png"
+class="slide"
+alt="Traffic Department"
+>
+
+<button
+class="prev"
+onclick="changeSlide(-1)"
+aria-label="Previous image"
+>
+❮
+</button>
+
+<button
+class="next"
+onclick="changeSlide(1)"
+aria-label="Next image"
+>
+❯
+</button>
+
 </div>
 
 </div>
+
+
+</div>
+
 </section>
 
+
+
+<!-- SOCIAL -->
 
 <section class="social">
 
@@ -485,56 +640,68 @@ TRAINING &amp; ROAD RULES
 </section>
 
 
+
+<!-- FOOTER -->
+
 <footer class="footer">
+
 Copyright © 2026 Traffic Learning | Verify Your License
+
 </footer>
+
 
 
 <script>
 
+
+/* RECORDS */
+
 const records={
 
- "UP1831831833":{
-   name:"Arshad",
-   father:"Gul Raham",
-   dob:"10 October 2001",
-   firstIssue:"11 February 2020",
-   renewal:"11 February 2025",
-   category:"Car",
-   expiry:"26 August 2028"
- },
+"UP1831831833":{
+name:"Arshad",
+father:"Gul Raham",
+dob:"10 October 2001",
+firstIssue:"11 February 2020",
+renewal:"11 February 2025",
+category:"Car",
+expiry:"26 August 2028"
+},
 
- "UP9081726354":{
-   name:"Aamir Shah",
-   father:"Naeem Shah",
-   dob:"12 June 1994",
-   firstIssue:"20 August 2020",
-   renewal:"20 August 2025",
-   category:"LMV / MCWG",
-   expiry:"19 August 2030"
- }
+"UP9081726354":{
+name:"Aamir Shah",
+father:"Naeem Shah",
+dob:"12 June 1994",
+firstIssue:"20 August 2020",
+renewal:"20 August 2025",
+category:"LMV / MCWG",
+expiry:"19 August 2030"
+}
 
 };
 
 
+
+/* LICENSE SEARCH */
+
 function searchRecord(){
 
-const el=document.getElementById('result');
+const el=document.getElementById("result");
 
 const key=document
-.getElementById('lic')
+.getElementById("lic")
 .value
 .trim()
 .toUpperCase();
 
 const r=records[key];
 
-el.style.display='block';
+el.style.display="block";
 
 
 if(!r){
 
-el.innerHTML='<h3>Record not found</h3>';
+el.innerHTML="<h3>Record not found</h3>";
 
 return;
 
@@ -595,16 +762,68 @@ ${r.expiry}
 
 
 document
-.getElementById('lic')
-.addEventListener(
-'keydown',
-e=>{
-if(e.key==='Enter')
-searchRecord()
+.getElementById("lic")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+searchRecord();
 }
-);
+
+});
+
+
+
+/* PICTURE SLIDER */
+
+let slideIndex=0;
+
+const slides=document.querySelectorAll(".slide");
+
+
+function showSlide(index){
+
+slides.forEach(function(slide){
+slide.classList.remove("active");
+});
+
+
+if(index>=slides.length){
+slideIndex=0;
+}
+
+if(index<0){
+slideIndex=slides.length-1;
+}
+
+
+slides[slideIndex].classList.add("active");
+
+}
+
+
+function changeSlide(n){
+
+slideIndex+=n;
+
+showSlide(slideIndex);
+
+}
+
+
+/* AUTOMATICALLY CHANGE IMAGE EVERY 4 SECONDS */
+
+setInterval(function(){
+
+slideIndex++;
+
+showSlide(slideIndex);
+
+},4000);
+
 
 </script>
 
+
 </body>
+
 </html>
