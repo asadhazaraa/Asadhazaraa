@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +7,6 @@
 <title>KP Hazara License Verification Portal</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -19,224 +17,224 @@ html{
 
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   color:#222;
-  background:#f5f8fa;
+  background:#fff;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .top{
-  height:110px;
+  height:120px;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 8%;
-  box-shadow:0 1px 5px rgba(0,0,0,.18);
+  padding:0 7%;
 }
 
-.brand{
-  width:70px;
-  height:70px;
-  border-radius:50%;
-  background:#153b7a;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  font-size:11px;
-  font-weight:700;
-  border:6px solid #e3262e;
+.top-logo{
+  width:58px;
+  height:58px;
+  object-fit:contain;
 }
 
 .menu{
-  font-size:34px;
+  font-size:35px;
+  line-height:1;
   font-weight:bold;
   cursor:pointer;
 }
 
 
-/* =========================
-   SEARCH SECTION
-========================= */
+/* ================= SEARCH ================= */
 
 .hero{
   position:relative;
-  background:#9eacc6;
-  padding:48px 5% 55px;
-  min-height:410px;
+  min-height:415px;
+  padding:55px 9% 50px;
+  background:#9fa9c5;
   overflow:hidden;
 }
 
-.hero::after{
+.hero::before{
   content:"KP";
   position:absolute;
   left:0;
   right:0;
-  top:100px;
+  top:80px;
   text-align:center;
-  font-size:150px;
+  font-size:260px;
+  line-height:1;
   font-weight:bold;
   color:#fff;
-  opacity:.07;
+  opacity:.06;
+  pointer-events:none;
 }
 
-.hero > *{
+.hero-content{
   position:relative;
-  z-index:1;
-}
-
-.hero h1{
-  text-align:center;
-  color:#c91d1d;
-  font-family:Georgia, serif;
-  font-size:36px;
-  margin:0 0 70px;
-}
-
-.form{
-  max-width:760px;
+  z-index:2;
+  max-width:1100px;
   margin:auto;
 }
 
-.form label{
+.hero h1{
+  margin:0 0 48px;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:34px;
+  color:#bd1717;
+  text-shadow:0 2px 2px rgba(0,0,0,.18);
+}
+
+.search-box{
+  max-width:100%;
+}
+
+.search-box label{
   display:block;
-  color:#d90000;
-  font-size:20px;
-  margin-bottom:12px;
+  margin-bottom:9px;
+  color:#d20d0d;
+  font-size:18px;
 }
 
-.form input{
+.search-box input{
+  display:block;
   width:100%;
-  height:55px;
+  height:51px;
+  padding:0 18px;
   border:1px solid #ddd;
-  border-radius:28px;
-  padding:0 20px;
-  font-size:18px;
-  outline:none;
+  border-radius:30px;
   background:#fff;
+  font-size:17px;
+  outline:none;
 }
 
-.form input:focus{
-  border-color:#c91d1d;
-  box-shadow:0 0 0 2px rgba(201,29,29,.10);
+.search-box input:focus{
+  border-color:#e52c2c;
 }
 
-.form button{
-  margin-top:38px;
-  background:#e63131;
-  color:#fff;
+.submit-btn{
+  margin-top:37px;
+  padding:11px 21px;
   border:2px solid #fff;
-  border-radius:10px;
-  padding:13px 25px;
-  font-size:18px;
+  border-radius:9px;
+  background:#ed3030;
+  color:#fff;
+  font-size:17px;
   cursor:pointer;
-  box-shadow:0 2px 5px rgba(0,0,0,.25);
+  box-shadow:0 2px 3px rgba(0,0,0,.25);
 }
 
-.form button:active{
-  transform:scale(.97);
+.submit-btn:active{
+  transform:scale(.96);
 }
 
 
-/* =========================
-   SEARCH RESULT
-========================= */
+/* ================= RESULT ================= */
 
 .result{
-  max-width:760px;
-  margin:25px auto 0;
-  background:#fff;
-  border-radius:14px;
-  padding:20px;
   display:none;
-  box-shadow:0 3px 12px rgba(0,0,0,.25);
+  margin-top:25px;
+  padding:18px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 3px 12px rgba(0,0,0,.2);
 }
 
 .result h3{
-  margin:0 0 14px;
+  margin:0 0 15px;
   color:#b71919;
 }
 
-.grid{
+.result-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
 
-.item{
-  padding:12px;
-  background:#f3f5f8;
-  border-radius:7px;
+.result-item{
+  padding:10px;
+  border-radius:6px;
+  background:#f3f5f7;
 }
 
-.item b{
+.result-item b{
   display:block;
-  font-size:12px;
+  margin-bottom:4px;
   color:#6b7280;
-  margin-bottom:5px;
+  font-size:12px;
 }
 
 
-/* =========================
-   THREE SERVICE CARDS
-========================= */
+/* ================= SPACE ================= */
+
+.white-gap{
+  height:48px;
+  background:#fff;
+}
+
+
+/* ================= THREE CARDS ================= */
+
+.services{
+  background:#eef1f2;
+  padding:12px 7% 14px;
+}
 
 .cards{
-  padding:40px 3%;
-  background:#eef1f2;
-
-  display:flex;
-  justify-content:center;
-  align-items:stretch;
-  gap:28px;
-  flex-wrap:wrap;
+  max-width:1080px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
 .card{
-  width:315px;
-  min-height:265px;
-  padding:28px 20px;
-
+  height:215px;
+  padding:22px 12px 17px;
   background:#fff;
-  border-radius:28px;
-
-  box-shadow:
-    0 4px 10px rgba(70,100,110,.25),
-    0 8px 20px rgba(70,100,110,.20);
+  border-radius:25px;
 
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
-
+  justify-content:center;
   text-align:center;
+
+  box-shadow:
+    0 3px 10px rgba(68,95,105,.25),
+    0 8px 18px rgba(68,95,105,.18);
+
   cursor:pointer;
 
   transition:
     transform .15s ease,
     box-shadow .15s ease;
+}
 
-  user-select:text;
-  -webkit-user-select:text;
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(68,95,105,.35);
+}
+
+.card:active{
+  transform:scale(.97);
 }
 
 .card-logo{
-  width:90px;
-  height:90px;
+  width:65px;
+  height:65px;
   object-fit:contain;
-  display:block;
-  margin:0 auto 12px;
+  margin-bottom:8px;
+  pointer-events:none;
 }
 
 .card h2{
-  margin:4px 0 12px;
-  color:#b31b17;
-  font-size:25px;
+  margin:3px 0 7px;
+  color:#b31916;
+  font-size:20px;
   line-height:1.15;
   font-weight:700;
 
@@ -247,86 +245,56 @@ body{
 .card p{
   margin:0;
   color:#777;
-  font-size:21px;
+  font-size:16px;
   font-weight:600;
 
   user-select:text;
   -webkit-user-select:text;
 }
 
-/* Hover */
 
-.card:hover{
-  transform:translateY(-5px);
-
-  box-shadow:
-    0 7px 14px rgba(70,100,110,.30),
-    0 12px 25px rgba(70,100,110,.25);
-}
-
-/* Click / touch */
-
-.card:active{
-  transform:scale(.96);
-
-  box-shadow:
-    0 2px 5px rgba(70,100,110,.25);
-}
-
-
-/* =========================
-   ABOUT SECTION
-========================= */
+/* ================= ABOUT ================= */
 
 .about{
-  background:#178bc5;
-  padding:38px 3%;
-  color:#d9edf8;
+  background:#178fc8;
+  color:#d8edf7;
+  padding:25px 2.5% 30px;
 }
 
 .about-row{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
 
   display:grid;
-  grid-template-columns:1fr 1fr 1.7fr;
-  gap:40px;
+  grid-template-columns:1fr 1fr 1.8fr;
+  gap:35px;
 
   align-items:start;
 }
 
-.about-column h2,
-.features-column h2{
-  font-family:Georgia, serif;
-  color:#c81717;
-  font-size:34px;
-  margin:0 0 25px;
+.about h2{
+  margin:0 0 23px;
+  color:#be1717;
+  font-family:Georgia,serif;
+  font-size:31px;
   text-shadow:0 2px 2px rgba(0,0,0,.35);
 }
 
-.about-column p,
-.features-column p{
-  font-size:17px;
-  line-height:1.4;
+.about p{
   margin:0;
+  font-size:16px;
+  line-height:1.25;
 }
 
 
-/* =========================
-   IMAGE SLIDER
-========================= */
-
-.photo-column{
-  width:100%;
-}
+/* ================= SLIDER ================= */
 
 .slider{
   position:relative;
   width:100%;
-  height:330px;
+  height:350px;
   overflow:hidden;
-  border-radius:5px;
-  background:#126fa0;
+  background:#126f9c;
 }
 
 .slide{
@@ -346,114 +314,140 @@ body{
   top:50%;
   transform:translateY(-50%);
 
+  width:42px;
+  height:55px;
+
   border:0;
-  background:rgba(0,0,0,.35);
+  background:rgba(0,0,0,.20);
   color:#fff;
 
-  font-size:30px;
-  padding:8px 12px;
-
+  font-size:32px;
   cursor:pointer;
-  z-index:5;
 }
 
 .prev{
-  left:5px;
+  left:0;
 }
 
 .next{
-  right:5px;
-}
-
-.prev:active,
-.next:active{
-  background:rgba(0,0,0,.60);
+  right:0;
 }
 
 
-/* =========================
-   REVIEW
-========================= */
+/* ================= REVIEW ================= */
 
-.social{
-  background:#fff;
+.review{
+  padding:35px 20px 55px;
   text-align:center;
-  padding:30px 20px 65px;
+  background:#fff;
 }
 
-.social h2{
+.review h2{
   color:#253046;
-  margin-bottom:30px;
+  margin:0 0 25px;
 }
 
-.icons{
+.social-icons{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:35px;
+  gap:30px;
 }
 
-.icon{
-  width:60px;
-  height:60px;
+.social-icon{
+  width:52px;
+  height:52px;
   border-radius:50%;
-
-  background:#c41414;
-  color:#fff;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
+  background:#c61c1c;
+  color:#fff;
+  font-size:20px;
   font-weight:bold;
-  font-size:22px;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 .footer{
+  padding:30px 15px;
+  border-top:1px solid #4caf6a;
   background:#fff;
-  border-top:1px solid #4fb76b;
-  padding:35px 20px;
-
   text-align:center;
   color:#6b7280;
   font-size:14px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
+  .top{
+    height:105px;
+  }
+
+  .hero{
+    min-height:415px;
+    padding:55px 9% 50px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .services{
+    padding-left:7%;
+    padding-right:7%;
+  }
+
+  .cards{
+    gap:20px;
+  }
+
+  .card{
+    height:215px;
+  }
+
+  .card h2{
+    font-size:18px;
+  }
+
+  .card p{
+    font-size:15px;
+  }
+
   .about-row{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1.8fr;
+    gap:25px;
   }
 
-  .photo-column{
-    grid-column:1 / -1;
+  .about h2{
+    font-size:28px;
   }
 
+  .about p{
+    font-size:15px;
+  }
+
+  .slider{
+    height:320px;
+  }
 }
 
 
-@media(max-width:700px){
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
 
   .top{
-    height:85px;
-    padding:0 5%;
+    height:80px;
+    padding:0 6%;
   }
 
-  .brand{
-    width:55px;
-    height:55px;
-    border-width:4px;
-    font-size:9px;
+  .top-logo{
+    width:45px;
+    height:45px;
   }
 
   .menu{
@@ -461,209 +455,228 @@ body{
   }
 
   .hero{
-    padding:35px 20px 45px;
+    min-height:360px;
+    padding:35px 6% 40px;
   }
 
   .hero h1{
-    font-size:27px;
-    margin-bottom:55px;
+    margin-bottom:45px;
+    font-size:25px;
   }
 
-  .form label{
-    font-size:18px;
+  .hero::before{
+    top:100px;
+    font-size:160px;
   }
 
-  .grid{
-    grid-template-columns:1fr;
+  .search-box label{
+    font-size:16px;
+  }
+
+  .search-box input{
+    height:48px;
+    font-size:15px;
+  }
+
+  .white-gap{
+    height:30px;
+  }
+
+  .services{
+    padding:12px 7px 15px;
   }
 
   .cards{
-    padding:30px 15px;
-    gap:20px;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
   }
 
   .card{
-    width:100%;
-    max-width:340px;
-    min-height:250px;
+    height:155px;
+    padding:10px 4px;
+    border-radius:16px;
   }
 
   .card-logo{
-    width:85px;
-    height:85px;
+    width:43px;
+    height:43px;
+    margin-bottom:5px;
   }
 
   .card h2{
-    font-size:24px;
+    margin:2px 0 5px;
+    font-size:12px;
   }
 
   .card p{
-    font-size:19px;
+    font-size:9px;
   }
 
   .about-row{
     grid-template-columns:1fr;
-    gap:35px;
   }
 
-  .photo-column{
-    grid-column:auto;
+  .about h2{
+    font-size:27px;
   }
 
-  .about-column h2,
-  .features-column h2{
-    font-size:29px;
+  .about p{
+    font-size:15px;
   }
 
   .slider{
-    height:260px;
+    height:250px;
   }
 
+  .result-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header class="top">
 
-  <div class="brand">
-    KP<br>HAZARA
-  </div>
+  <img
+    src="IMG_0950.jpeg"
+    class="top-logo"
+    alt="Logo"
+  >
 
   <div class="menu">☰</div>
 
 </header>
 
 
-<!-- =========================
-     LICENSE SEARCH
-========================= -->
+<!-- SEARCH -->
 
 <section class="hero" id="licenseSearch">
 
-  <h1>KP Hazara License Verification Portal</h1>
+  <div class="hero-content">
 
-  <div class="form">
+    <h1>KP Hazara License Verification Portal</h1>
 
-    <label for="lic">
-      License Number *
-    </label>
+    <div class="search-box">
 
-    <input
-      id="lic"
-      type="text"
-      autocomplete="off"
-      placeholder="Type License Number"
-    >
+      <label for="lic">
+        CNIC Number *
+      </label>
 
-    <button type="button" onclick="searchRecord()">
-      Submit
-    </button>
+      <input
+        id="lic"
+        type="text"
+        inputmode="text"
+        autocomplete="off"
+        placeholder="Type CNIC Number without dash"
+      >
 
-    <div id="result" class="result"></div>
+      <button
+        class="submit-btn"
+        type="button"
+        onclick="searchRecord()"
+      >
+        Submit
+      </button>
+
+      <div id="result" class="result"></div>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     THREE CARDS
-========================= -->
-
-<section class="cards">
+<div class="white-gap"></div>
 
 
-  <!-- CARD 1 -->
+<!-- THREE CARDS -->
 
-  <div class="card">
+<section class="services">
 
-    <img
-      src="IMG_0948.jpeg"
-      class="card-logo"
-      alt="Driving License"
-    >
+  <div class="cards">
 
-    <h2>
-      Driving License<br>
-      Verification
-    </h2>
 
-    <p>
-      Directorate of Transport
-    </p>
+    <!-- DRIVING LICENSE -->
+
+    <div class="card" onclick="openSearch(event)">
+
+      <img
+        src="IMG_0948.jpeg"
+        class="card-logo"
+        alt="Driving License"
+      >
+
+      <h2>
+        Driving License<br>
+        Verification
+      </h2>
+
+      <p>Directorate of Transport</p>
+
+    </div>
+
+
+    <!-- ARMS LICENSE -->
+
+    <div class="card">
+
+      <img
+        src="IMG_0950.jpeg"
+        class="card-logo"
+        alt="Arms License"
+      >
+
+      <h2>
+        Arms License<br>
+        Verification
+      </h2>
+
+      <p>Home Department</p>
+
+    </div>
+
+
+    <!-- DASTAK -->
+
+    <div class="card">
+
+      <img
+        src="IMG_0951.jpeg"
+        class="card-logo"
+        alt="Dastak"
+      >
+
+      <h2>
+        Dastak Digital Arms<br>
+        License
+      </h2>
+
+      <p>Home Department</p>
+
+    </div>
+
 
   </div>
-
-
-  <!-- CARD 2 -->
-
-  <div class="card">
-
-    <img
-      src="IMG_0950.jpeg"
-      class="card-logo"
-      alt="Arms License"
-    >
-
-    <h2>
-      Arms License<br>
-      Verification
-    </h2>
-
-    <p>
-      Home Department
-    </p>
-
-  </div>
-
-
-  <!-- CARD 3 -->
-
-  <div class="card">
-
-    <img
-      src="IMG_0951.jpeg"
-      class="card-logo"
-      alt="Dastak Digital Arms License"
-    >
-
-    <h2>
-      Dastak Digital Arms<br>
-      License
-    </h2>
-
-    <p>
-      Home Department
-    </p>
-
-  </div>
-
 
 </section>
 
 
-<!-- =========================
-     ABOUT + FEATURES + SLIDER
-========================= -->
+<!-- ABOUT -->
 
 <section class="about">
 
   <div class="about-row">
 
 
-    <!-- ABOUT -->
-
-    <div class="about-column">
+    <div>
 
       <h2>About Us</h2>
 
@@ -682,74 +695,63 @@ body{
     </div>
 
 
-    <!-- FEATURES -->
-
-    <div class="features-column">
+    <div>
 
       <h2>Key Features</h2>
 
       <p>
-
         Centralized Issuance and Management of Driving Licenses
-
         <br><br>
 
         Centralized Database of Licensing System of whole KP Hazara
-
         <br><br>
 
         Centralized Driving License Printing Facility
-
         <br><br>
 
         Delivery of Issued Licenses through courier and basing
         on that verification of the Applicant can be made easy
-
       </p>
 
     </div>
 
 
-    <!-- SLIDER -->
-
-    <div class="photo-column">
+    <div>
 
       <div class="slider">
 
         <img
           src="IMG_0944.jpeg"
           class="slide active"
-          alt="Traffic Department"
+          alt="Traffic"
         >
 
         <img
           src="IMG_0945.jpeg"
           class="slide"
-          alt="Traffic Department"
+          alt="Traffic"
         >
 
         <img
           src="IMG_0946.png"
           class="slide"
-          alt="Traffic Department"
+          alt="Traffic"
         >
 
         <button
           class="prev"
-          type="button"
           onclick="changeSlide(-1)"
-          aria-label="Previous image"
+          type="button"
         >
-          ❮
+          ‹
         </button>
 
         <button
           class="next"
-          type="button"
           onclick="changeSlide(1)"
-          aria-label="Next image"
+          type="button"
         >
-          ❯
+          ›
         </button>
 
       </div>
@@ -762,30 +764,26 @@ body{
 </section>
 
 
-<!-- =========================
-     REVIEW
-========================= -->
+<!-- REVIEW -->
 
-<section class="social">
+<section class="review">
 
   <h2>Review Us On</h2>
 
-  <div class="icons">
+  <div class="social-icons">
 
-    <div class="icon">f</div>
+    <div class="social-icon">f</div>
 
-    <div class="icon">X</div>
+    <div class="social-icon">X</div>
 
-    <div class="icon">◎</div>
+    <div class="social-icon">◎</div>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -796,9 +794,7 @@ body{
 
 <script>
 
-/* =========================
-   RECORD DATA
-========================= */
+/* ================= RECORDS ================= */
 
 const records = {
 
@@ -825,23 +821,21 @@ const records = {
 };
 
 
-/* =========================
-   SEARCH
-========================= */
+/* ================= SEARCH ================= */
 
 function searchRecord(){
+
+  const input =
+    document.getElementById("lic");
 
   const result =
     document.getElementById("result");
 
   const key =
-    document
-      .getElementById("lic")
-      .value
-      .trim()
-      .toUpperCase();
+    input.value.trim().toUpperCase();
 
-  const record = records[key];
+  const record =
+    records[key];
 
   result.style.display = "block";
 
@@ -852,7 +846,6 @@ function searchRecord(){
       "<h3>Record not found</h3>";
 
     return;
-
   }
 
 
@@ -860,152 +853,104 @@ function searchRecord(){
 
     <h3>License Record</h3>
 
-    <div class="grid">
+    <div class="result-grid">
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>License Number</b>
-
         ${key}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>Name</b>
-
         ${record.name}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>Father Name</b>
-
         ${record.father}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>Date of Birth</b>
-
         ${record.dob}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>First Issue</b>
-
         ${record.firstIssue}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>Issue / Renewal</b>
-
         ${record.renewal}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>Category</b>
-
         ${record.category}
-
       </div>
 
-
-      <div class="item">
-
+      <div class="result-item">
         <b>Valid Until</b>
-
         ${record.expiry}
-
       </div>
-
 
     </div>
 
   `;
-
 }
 
 
-/* ENTER KEY SEARCH */
+/* ENTER KEY */
 
 document
-  .getElementById("lic")
-  .addEventListener("keydown", function(event){
+.getElementById("lic")
+.addEventListener("keydown",function(event){
 
-    if(event.key === "Enter"){
-
-      searchRecord();
-
-    }
-
-  });
-
-
-/* =========================
-   FIRST CARD CLICK
-========================= */
-
-const cards =
-  document.querySelectorAll(".card");
-
-cards[0].addEventListener("click", function(event){
-
-  /*
-    Text select/copy karte waqt
-    page automatically scroll nahi karega.
-  */
-
-  const selection =
-    window.getSelection().toString();
-
-  if(selection){
-    return;
+  if(event.key === "Enter"){
+    searchRecord();
   }
-
-  document
-    .getElementById("licenseSearch")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-  setTimeout(function(){
-
-    document
-      .getElementById("lic")
-      .focus();
-
-  },500);
 
 });
 
 
-/* =========================
-   SLIDER
-========================= */
+/* DRIVING CARD CLICK */
+
+function openSearch(event){
+
+  const selectedText =
+    window.getSelection().toString();
+
+  if(selectedText){
+    return;
+  }
+
+  document
+  .getElementById("licenseSearch")
+  .scrollIntoView({
+    behavior:"smooth"
+  });
+
+  setTimeout(function(){
+
+    document
+    .getElementById("lic")
+    .focus();
+
+  },400);
+
+}
+
+
+/* ================= SLIDER ================= */
 
 let slideIndex = 0;
 
 const slides =
-  document.querySelectorAll(".slide");
+document.querySelectorAll(".slide");
 
 
-function showSlide(index){
+function showSlide(){
 
   slides.forEach(function(slide){
 
@@ -1014,24 +959,19 @@ function showSlide(index){
   });
 
 
-  if(index >= slides.length){
-
+  if(slideIndex >= slides.length){
     slideIndex = 0;
-
   }
 
 
-  if(index < 0){
-
-    slideIndex =
-      slides.length - 1;
-
+  if(slideIndex < 0){
+    slideIndex = slides.length - 1;
   }
 
 
   slides[slideIndex]
-    .classList
-    .add("active");
+  .classList
+  .add("active");
 
 }
 
@@ -1040,24 +980,20 @@ function changeSlide(number){
 
   slideIndex += number;
 
-  showSlide(slideIndex);
+  showSlide();
 
 }
 
-
-/* AUTO CHANGE EVERY 4 SECONDS */
 
 setInterval(function(){
 
   slideIndex++;
 
-  showSlide(slideIndex);
+  showSlide();
 
 },4000);
 
 </script>
 
-
 </body>
-
 </html>
