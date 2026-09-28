@@ -1,57 +1,1042 @@
-result.innerHTML = `
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="result-grid">
+<title>KP Hazara License Verification Portal</title>
 
-    <div class="result-item">
-      <b>CNIC Number :</b>
-      ${key}
-    </div>
+<style>
 
-    <div class="result-item">
-      <b>Name :</b>
-      ${record.name}
-    </div>
+*{
+  box-sizing:border-box;
+}
 
-    <div class="result-item">
-      <b>Father/Husband Name :</b>
-      ${record.father}
-    </div>
+html{
+  scroll-behavior:smooth;
+}
 
-    <div class="result-item">
-      <b>City / Address :</b>
-      ${record.address}
-    </div>
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#222;
+  background:#fff;
+}
 
-    <div class="result-item">
-      <b>License Number :</b>
-      ${record.licence}
-    </div>
+/* ================= HEADER ================= */
 
-    <div class="result-item">
-      <b>DOB :</b>
-      ${record.dob}
-    </div>
+.top{
+  height:120px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 7%;
+}
 
-    <div class="result-item">
-      <b>Blood Group :</b>
-      ${record.bloodGroup}
-    </div>
+.top-logo{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  border-radius:50%;
+}
 
-    <div class="result-item">
-      <b>Category :</b>
-      ${record.category}
-    </div>
+.menu{
+  font-size:35px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    <div class="result-item">
-      <b>Issue Date :</b>
-      ${record.issueDate}
-    </div>
+/* ================= SEARCH ================= */
 
-    <div class="result-item">
-      <b>Expiry Date :</b>
-      ${record.expiryDate}
+.hero{
+  position:relative;
+  min-height:415px;
+  padding:55px 9% 50px;
+  background:#9fa9c5;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"KP";
+  position:absolute;
+  left:0;
+  right:0;
+  top:80px;
+  text-align:center;
+  font-size:260px;
+  font-weight:bold;
+  color:#fff;
+  opacity:.06;
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+}
+
+.hero h1{
+  margin:0 0 48px;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:34px;
+  color:#bd1717;
+  text-shadow:0 2px 2px rgba(0,0,0,.18);
+}
+
+.search-box label{
+  display:block;
+  margin-bottom:9px;
+  color:#d20d0d;
+  font-size:18px;
+}
+
+.search-box input{
+  width:100%;
+  height:51px;
+  padding:0 18px;
+  border:1px solid #ddd;
+  border-radius:30px;
+  background:#fff;
+  font-size:17px;
+  outline:none;
+}
+
+.search-box input:focus{
+  border-color:#e52c2c;
+}
+
+.submit-btn{
+  margin-top:37px;
+  padding:11px 21px;
+  border:2px solid #fff;
+  border-radius:9px;
+  background:#ed3030;
+  color:#fff;
+  font-size:17px;
+  cursor:pointer;
+  box-shadow:0 2px 3px rgba(0,0,0,.25);
+}
+
+.submit-btn:active{
+  transform:scale(.96);
+}
+
+/* ================= RESULT ================= */
+
+.result{
+  display:none;
+  width:100%;
+  max-width:520px;
+  margin:35px 0 0;
+  padding:0;
+  background:#f7f8f8;
+  border-radius:5px;
+  overflow:hidden;
+  box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+.result-grid{
+  display:block;
+}
+
+.result-item{
+  padding:18px 22px;
+  background:#f7f8f8;
+  border-bottom:2px solid #222;
+  color:#6b7280;
+  font-size:19px;
+  line-height:1.4;
+}
+
+.result-item:last-child{
+  border-bottom:0;
+}
+
+.result-item b{
+  display:block;
+  margin-bottom:6px;
+  color:#111;
+  font-size:18px;
+  font-weight:700;
+}
+
+.not-found{
+  padding:22px;
+  color:#b71919;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* ================= GAP ================= */
+
+.white-gap{
+  height:48px;
+  background:#fff;
+}
+
+/* ================= CARDS ================= */
+
+.services{
+  background:#eef1f2;
+  padding:12px 7% 14px;
+}
+
+.cards{
+  max-width:1080px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.card{
+  height:215px;
+  padding:22px 12px 17px;
+  background:#fff;
+  border-radius:25px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  box-shadow:
+    0 3px 10px rgba(68,95,105,.25),
+    0 8px 18px rgba(68,95,105,.18);
+
+  cursor:pointer;
+
+  animation:cardFloat 3s ease-in-out infinite;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.card:nth-child(2){
+  animation-delay:.35s;
+}
+
+.card:nth-child(3){
+  animation-delay:.7s;
+}
+
+@keyframes cardFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-5px);
+  }
+}
+
+.card:hover{
+  animation-play-state:paused;
+  transform:translateY(-7px) scale(1.02);
+  box-shadow:0 10px 22px rgba(68,95,105,.35);
+}
+
+.card:active{
+  animation-play-state:paused;
+  transform:scale(.96);
+}
+
+.card-logo{
+  width:65px;
+  height:65px;
+  object-fit:contain;
+  margin-bottom:8px;
+  pointer-events:none;
+}
+
+.card h2{
+  margin:3px 0 7px;
+  color:#b31916;
+  font-size:20px;
+  line-height:1.15;
+  user-select:text;
+  -webkit-user-select:text;
+}
+
+.card p{
+  margin:0;
+  color:#777;
+  font-size:16px;
+  font-weight:600;
+  user-select:text;
+  -webkit-user-select:text;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  background:#178fc8;
+  color:#d8edf7;
+  padding:25px 2.5% 30px;
+}
+
+.about-row{
+  max-width:1250px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1.8fr;
+  gap:35px;
+  align-items:start;
+}
+
+.about h2{
+  margin:0 0 23px;
+  color:#be1717;
+  font-family:Georgia,serif;
+  font-size:31px;
+  text-shadow:0 2px 2px rgba(0,0,0,.35);
+}
+
+.about p{
+  margin:0;
+  font-size:16px;
+  line-height:1.25;
+}
+
+/* ================= SLIDER ================= */
+
+.slider{
+  position:relative;
+  width:100%;
+  height:350px;
+  overflow:hidden;
+  background:#126f9c;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transform:scale(1.04);
+
+  transition:
+    opacity .7s ease,
+    transform 1.2s ease;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+.prev,
+.next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:42px;
+  height:55px;
+  border:0;
+  background:rgba(0,0,0,.20);
+  color:#fff;
+  font-size:32px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.prev{
+  left:0;
+}
+
+.next{
+  right:0;
+}
+
+/* ================= REVIEW ================= */
+
+.review{
+  padding:35px 20px 55px;
+  text-align:center;
+  background:#fff;
+}
+
+.review h2{
+  color:#253046;
+  margin:0 0 25px;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.social-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#c61c1c;
+  color:#fff;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  padding:30px 15px;
+  border-top:1px solid #4caf6a;
+  background:#fff;
+  text-align:center;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+  .top{
+    height:105px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .cards{
+    gap:20px;
+  }
+
+  .about-row{
+    grid-template-columns:1fr 1fr 1.8fr;
+    gap:25px;
+  }
+
+  .about h2{
+    font-size:28px;
+  }
+
+  .about p{
+    font-size:15px;
+  }
+
+  .slider{
+    height:320px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+  .top{
+    height:80px;
+    padding:0 6%;
+  }
+
+  .top-logo{
+    width:45px;
+    height:45px;
+  }
+
+  .menu{
+    font-size:29px;
+  }
+
+  .hero{
+    min-height:360px;
+    padding:35px 6% 40px;
+  }
+
+  .hero h1{
+    margin-bottom:45px;
+    font-size:25px;
+  }
+
+  .hero::before{
+    top:100px;
+    font-size:160px;
+  }
+
+  .search-box label{
+    font-size:16px;
+  }
+
+  .search-box input{
+    height:48px;
+    font-size:15px;
+  }
+
+  .white-gap{
+    height:30px;
+  }
+
+  .services{
+    padding:12px 7px 15px;
+  }
+
+  .cards{
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+
+  .card{
+    height:155px;
+    padding:10px 4px;
+    border-radius:16px;
+  }
+
+  .card-logo{
+    width:43px;
+    height:43px;
+  }
+
+  .card h2{
+    font-size:12px;
+  }
+
+  .card p{
+    font-size:9px;
+  }
+
+  .about-row{
+    grid-template-columns:1fr;
+  }
+
+  .about h2{
+    font-size:27px;
+  }
+
+  .about p{
+    font-size:15px;
+  }
+
+  .slider{
+    height:250px;
+  }
+
+  .result{
+    max-width:100%;
+  }
+
+  .result-item{
+    padding:15px 17px;
+    font-size:17px;
+  }
+
+  .result-item b{
+    font-size:16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .card{
+    animation:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="top">
+
+  <img
+    src="IMG_0957.jpeg"
+    class="top-logo"
+    alt="Logo"
+  >
+
+  <div class="menu">☰</div>
+
+</header>
+
+
+<!-- SEARCH -->
+
+<section class="hero" id="licenseSearch">
+
+  <div class="hero-content">
+
+    <h1>KP Hazara License Verification Portal</h1>
+
+    <div class="search-box">
+
+      <label for="lic">
+        CNIC Number *
+      </label>
+
+      <input
+        id="lic"
+        type="text"
+        inputmode="numeric"
+        maxlength="13"
+        autocomplete="off"
+        placeholder="Type CNIC Number without dash"
+      >
+
+      <button
+        class="submit-btn"
+        type="button"
+        onclick="searchRecord()"
+      >
+        Submit
+      </button>
+
+      <div id="result" class="result"></div>
+
     </div>
 
   </div>
 
-`;
+</section>
+
+
+<div class="white-gap"></div>
+
+
+<!-- THREE CARDS -->
+
+<section class="services">
+
+  <div class="cards">
+
+    <!-- CARD 1 -->
+
+    <div class="card" onclick="openSearch()">
+
+      <img
+        src="IMG_0948.jpeg"
+        class="card-logo"
+        alt="Driving License"
+      >
+
+      <h2>
+        Driving License<br>
+        Verification
+      </h2>
+
+      <p>Directorate of Transport</p>
+
+    </div>
+
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+      <img
+        src="IMG_0950.jpeg"
+        class="card-logo"
+        alt="Arms License"
+      >
+
+      <h2>
+        Arms License<br>
+        Verification
+      </h2>
+
+      <p>Home Department</p>
+
+    </div>
+
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+      <img
+        src="IMG_0951.jpeg"
+        class="card-logo"
+        alt="Dastak"
+      >
+
+      <h2>
+        Dastak Digital Arms<br>
+        License
+      </h2>
+
+      <p>Home Department</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about">
+
+  <div class="about-row">
+
+    <div>
+
+      <h2>About Us</h2>
+
+      <p>
+        Driving License Issuance Management System (DLIMS)
+        Phase-II automates the processes for driving license
+        issuance, renewal and upgrades. These activities are
+        carried out throughout the KP Hazara. This system
+        provides quick processing service to public and up to
+        date statistics to the authorities by using state of
+        the art technology and equipment. The system redefines
+        the issuance process of all types of licenses by using
+        a centralized network.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h2>Key Features</h2>
+
+      <p>
+        Centralized Issuance and Management of Driving Licenses
+
+        <br><br>
+
+        Centralized Database of Licensing System of whole KP Hazara
+
+        <br><br>
+
+        Centralized Driving License Printing Facility
+
+        <br><br>
+
+        Delivery of Issued Licenses through courier and basing
+        on that verification of the Applicant can be made easy
+      </p>
+
+    </div>
+
+
+    <!-- SLIDER -->
+
+    <div>
+
+      <div class="slider">
+
+        <img
+          src="IMG_0944.jpeg"
+          class="slide active"
+          alt="Traffic"
+        >
+
+        <img
+          src="IMG_0945.jpeg"
+          class="slide"
+          alt="Traffic"
+        >
+
+        <img
+          src="IMG_0943.jpeg"
+          class="slide"
+          alt="Traffic"
+        >
+
+        <button
+          class="prev"
+          type="button"
+          onclick="changeSlide(-1)"
+          aria-label="Previous"
+        >
+          ‹
+        </button>
+
+        <button
+          class="next"
+          type="button"
+          onclick="changeSlide(1)"
+          aria-label="Next"
+        >
+          ›
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REVIEW -->
+
+<section class="review">
+
+  <h2>Review Us On</h2>
+
+  <div class="social-icons">
+
+    <div class="social-icon">f</div>
+
+    <div class="social-icon">X</div>
+
+    <div class="social-icon">◎</div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  Copyright © 2026 KP Hazara DLIMS | Verify Your License
+</footer>
+
+
+<script>
+
+/* =========================================
+   RECORDS
+========================================= */
+
+const records = {
+
+  "1110273868161":{
+
+    name:"Arshad",
+
+    father:"Raham Jan",
+
+    address:"Sample Address",
+
+    licence:"SAMPLE-001",
+
+    dob:"01-01-2000",
+
+    bloodGroup:"N/A",
+
+    category:"Sample Category",
+
+    issueDate:"01-01-2025",
+
+    expiryDate:"01-01-2030"
+
+  }
+
+};
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+function searchRecord(){
+
+  const input =
+    document.getElementById("lic");
+
+  const result =
+    document.getElementById("result");
+
+  const key =
+    input.value.replace(/\D/g,"").trim();
+
+  const record =
+    records[key];
+
+  result.style.display = "block";
+
+
+  if(!record){
+
+    result.innerHTML = `
+      <div class="not-found">
+        Record not found
+      </div>
+    `;
+
+    return;
+  }
+
+
+  result.innerHTML = `
+
+    <div class="result-grid">
+
+
+      <div class="result-item">
+        <b>CNIC Number :</b>
+        ${key}
+      </div>
+
+
+      <div class="result-item">
+        <b>Name :</b>
+        ${record.name}
+      </div>
+
+
+      <div class="result-item">
+        <b>Father/Husband Name :</b>
+        ${record.father}
+      </div>
+
+
+      <div class="result-item">
+        <b>City / Address :</b>
+        ${record.address}
+      </div>
+
+
+      <div class="result-item">
+        <b>License Number :</b>
+        ${record.licence}
+      </div>
+
+
+      <div class="result-item">
+        <b>DOB :</b>
+        ${record.dob}
+      </div>
+
+
+      <div class="result-item">
+        <b>Blood Group :</b>
+        ${record.bloodGroup}
+      </div>
+
+
+      <div class="result-item">
+        <b>Category :</b>
+        ${record.category}
+      </div>
+
+
+      <div class="result-item">
+        <b>Issue Date :</b>
+        ${record.issueDate}
+      </div>
+
+
+      <div class="result-item">
+        <b>Expiry Date :</b>
+        ${record.expiryDate}
+      </div>
+
+
+    </div>
+
+  `;
+
+}
+
+
+/* ENTER KEY SEARCH */
+
+document
+.getElementById("lic")
+.addEventListener("keydown",function(event){
+
+  if(event.key === "Enter"){
+    searchRecord();
+  }
+
+});
+
+
+/* FIRST CARD CLICK */
+
+function openSearch(){
+
+  const selected =
+    window.getSelection().toString();
+
+  if(selected){
+    return;
+  }
+
+  document
+  .getElementById("licenseSearch")
+  .scrollIntoView({
+    behavior:"smooth"
+  });
+
+  setTimeout(function(){
+
+    document
+    .getElementById("lic")
+    .focus();
+
+  },400);
+
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+let slideIndex = 0;
+
+const slides =
+  document.querySelectorAll(".slide");
+
+
+function showSlide(){
+
+  slides.forEach(function(slide){
+
+    slide.classList.remove("active");
+
+  });
+
+
+  if(slideIndex >= slides.length){
+    slideIndex = 0;
+  }
+
+
+  if(slideIndex < 0){
+    slideIndex = slides.length - 1;
+  }
+
+
+  slides[slideIndex]
+  .classList
+  .add("active");
+
+}
+
+
+function changeSlide(number){
+
+  slideIndex += number;
+
+  showSlide();
+
+}
+
+
+/* AUTO SLIDER */
+
+setInterval(function(){
+
+  slideIndex++;
+
+  showSlide();
+
+},4000);
+
+</script>
+
+</body>
+</html>
