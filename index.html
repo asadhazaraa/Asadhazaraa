@@ -2,12 +2,21 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
 
 <title>KP Hazara License Verification Portal</title>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 *{
   box-sizing:border-box;
@@ -19,474 +28,811 @@ html{
 
 body{
   margin:0;
+  padding:0;
   font-family:Arial,Helvetica,sans-serif;
+  background:#ffffff;
   color:#222;
-  background:#fff;
 }
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .top{
-  height:120px;
-  background:#fff;
+  width:100%;
+  height:105px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 7%;
+
+  padding:0 6%;
+
+  background:#fff;
 }
 
 .top-logo{
-  width:58px;
-  height:58px;
+  width:82px;
+  height:82px;
+
   object-fit:contain;
-  border-radius:50%;
+
+  display:block;
 }
 
 .menu{
-  font-size:35px;
+  font-size:34px;
+  line-height:1;
   font-weight:bold;
+  color:#333;
   cursor:pointer;
 }
 
 
-/* ================= SEARCH ================= */
+/* =========================
+   SEARCH HERO
+========================= */
 
 .hero{
   position:relative;
-  min-height:415px;
-  padding:55px 9% 50px;
-  background:#9fa9c5;
+
+  width:100%;
+  min-height:390px;
+
+  padding:40px 7% 45px;
+
+  background:#9eacc9;
+
   overflow:hidden;
 }
 
+
+/* FADED BACKGROUND LOGO EFFECT */
+
 .hero::before{
-  content:"KP";
+  content:"";
+
   position:absolute;
-  left:0;
-  right:0;
-  top:80px;
-  text-align:center;
-  font-size:260px;
-  font-weight:bold;
-  color:#fff;
-  opacity:.06;
+
+  width:260px;
+  height:260px;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-45%);
+
+  background:url("IMG_0957.jpeg")
+             center/contain
+             no-repeat;
+
+  opacity:.07;
+
   pointer-events:none;
 }
+
 
 .hero-content{
   position:relative;
   z-index:2;
+
+  width:100%;
   max-width:1100px;
+
   margin:auto;
 }
 
+
 .hero h1{
-  margin:0 0 48px;
+  margin:0 0 45px;
+
   text-align:center;
+
   font-family:Georgia,serif;
-  font-size:34px;
-  color:#bd1717;
-  text-shadow:0 2px 2px rgba(0,0,0,.18);
+
+  font-size:32px;
+
+  color:#b91c1c;
+
+  text-shadow:
+    0 2px 2px rgba(0,0,0,.15);
 }
+
+
+/* =========================
+   SEARCH BOX
+========================= */
 
 .search-box label{
   display:block;
-  margin-bottom:9px;
-  color:#d20d0d;
-  font-size:18px;
+
+  margin-bottom:10px;
+
+  color:#c91d1d;
+
+  font-size:17px;
 }
+
 
 .search-box input{
+  display:block;
+
   width:100%;
-  height:51px;
-  padding:0 18px;
+  height:52px;
+
+  padding:0 20px;
+
   border:1px solid #ddd;
-  border-radius:30px;
-  background:#fff;
-  font-size:17px;
+
+  border-radius:28px;
+
   outline:none;
+
+  background:#fff;
+
+  font-size:16px;
+
+  color:#333;
 }
+
 
 .search-box input:focus{
-  border-color:#e52c2c;
+  border-color:#d92323;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(217,35,35,.08);
 }
+
 
 .submit-btn{
-  margin-top:37px;
-  padding:11px 21px;
+  margin-top:30px;
+
+  padding:11px 22px;
+
   border:2px solid #fff;
+
   border-radius:9px;
-  background:#ed3030;
+
+  background:#e52d32;
+
   color:#fff;
+
   font-size:17px;
+
   cursor:pointer;
-  box-shadow:0 2px 3px rgba(0,0,0,.25);
+
+  box-shadow:
+    0 2px 4px
+    rgba(0,0,0,.25);
 }
 
 
-/* ================= SEARCH RESULT ================= */
+.submit-btn:active{
+  transform:scale(.97);
+}
+
+
+/* =========================
+   RESULT
+========================= */
 
 .result{
   display:none;
+
   width:100%;
   max-width:520px;
-  margin:35px 0 0;
-  background:#f7f8f8;
-  border-radius:5px;
+
+  margin-top:30px;
+
   overflow:hidden;
-  box-shadow:0 3px 12px rgba(0,0,0,.15);
+
+  border-radius:8px;
+
+  background:#f7f8f8;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0,0,0,.15);
 }
 
+
 .result-item{
-  padding:18px 22px;
+  padding:17px 20px;
+
   background:#f7f8f8;
-  border-bottom:2px solid #222;
+
+  border-bottom:1px solid #333;
+
   color:#6b7280;
-  font-size:19px;
+
+  font-size:17px;
+
   line-height:1.4;
 }
+
 
 .result-item:last-child{
   border-bottom:0;
 }
 
+
 .result-item b{
   display:block;
-  margin-bottom:6px;
+
+  margin-bottom:5px;
+
   color:#111;
-  font-size:18px;
+
+  font-size:16px;
+
+  font-weight:700;
 }
 
+
 .not-found{
-  padding:22px;
+  padding:20px;
+
   color:#b71919;
-  font-size:18px;
+
+  font-size:17px;
+
   font-weight:bold;
 }
 
 
-/* ================= GAP ================= */
+/* =========================
+   WHITE SPACE
+========================= */
 
 .white-gap{
-  height:48px;
+  width:100%;
+  height:38px;
+
+  background:#fff;
 }
 
 
-/* =========================================
-   3 PICTURES
-========================================= */
+/* ===================================
+   3 CARDS - SCREENSHOT STYLE
+=================================== */
 
 .services{
-  background:#eef1f2;
-  padding:20px 7%;
+  width:100%;
+
+  padding:
+    20px 18px 25px;
+
+  background:#eef3f5;
 }
+
 
 .cards{
+  width:100%;
   max-width:1080px;
-  margin:auto;
 
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
+  margin:0 auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:38px;
 }
 
 
-/* PICTURE BOX */
+/* CARD */
 
 .card{
-  height:220px;
-  background:#fff;
-  border-radius:25px;
+  width:100%;
+  height:320px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
+  background:#fff;
+
+  border-radius:38px;
+
   overflow:hidden;
 
+  cursor:pointer;
+
   box-shadow:
-    0 3px 10px rgba(68,95,105,.25),
-    0 8px 18px rgba(68,95,105,.18);
+    0 3px 12px rgba(79,108,122,.28),
+    0 10px 25px rgba(79,108,122,.20);
 
-  animation:cardFloat 3s ease-in-out infinite;
-}
-
-.card:nth-child(2){
-  animation-delay:.35s;
-}
-
-.card:nth-child(3){
-  animation-delay:.7s;
-}
-
-@keyframes cardFloat{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-5px);
-  }
-
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
 }
 
 
-/* BIG IMAGE */
+.card:active{
+  transform:scale(.98);
+}
+
+
+/* COMPLETE IMAGE INSIDE CARD */
 
 .card-picture{
+  display:block;
+
   width:100%;
   height:100%;
+
   object-fit:contain;
+
   object-position:center;
-  display:block;
+
+  border-radius:38px;
 }
 
 
-/* ================= ABOUT ================= */
+/* =========================
+   ABOUT AREA
+========================= */
 
 .about{
-  background:#178fc8;
-  color:#d8edf7;
-  padding:25px 2.5% 30px;
+  width:100%;
+
+  padding:
+    30px 4% 35px;
+
+  background:#188fc7;
+
+  color:#e2f2f8;
 }
 
+
 .about-row{
+  width:100%;
   max-width:1250px;
+
   margin:auto;
 
   display:grid;
-  grid-template-columns:1fr 1fr 1.8fr;
-  gap:35px;
 
-  align-items:start;
+  grid-template-columns:
+    1fr 1fr 1.7fr;
+
+  gap:35px;
 }
+
 
 .about h2{
-  margin:0 0 23px;
-  color:#be1717;
+  margin:
+    0 0 20px;
+
+  color:#b51c1c;
+
   font-family:Georgia,serif;
+
   font-size:31px;
-  text-shadow:0 2px 2px rgba(0,0,0,.35);
+
+  text-shadow:
+    0 2px 2px
+    rgba(0,0,0,.25);
 }
+
 
 .about p{
   margin:0;
-  font-size:16px;
-  line-height:1.25;
+
+  font-size:15px;
+
+  line-height:1.4;
 }
 
 
-/* ================= SLIDER ================= */
+/* =========================
+   SLIDER
+========================= */
 
 .slider{
   position:relative;
+
   width:100%;
-  height:350px;
+  height:330px;
+
   overflow:hidden;
-  background:#126f9c;
+
+  background:#147ca9;
 }
+
 
 .slide{
   position:absolute;
+
   inset:0;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
 
   opacity:0;
-  transform:scale(1.04);
+
+  transform:scale(1.03);
 
   transition:
     opacity .7s ease,
-    transform 1.2s ease;
+    transform 1s ease;
 }
+
 
 .slide.active{
   opacity:1;
+
   transform:scale(1);
 }
+
 
 .prev,
 .next{
   position:absolute;
+
   top:50%;
+
   transform:translateY(-50%);
+
+  z-index:5;
 
   width:42px;
   height:55px;
 
+  padding:0;
+
   border:0;
-  background:rgba(0,0,0,.20);
+
+  background:
+    rgba(0,0,0,.25);
+
   color:#fff;
 
-  font-size:32px;
+  font-size:31px;
+
   cursor:pointer;
-  z-index:5;
 }
+
 
 .prev{
   left:0;
 }
+
 
 .next{
   right:0;
 }
 
 
-/* ================= REVIEW ================= */
+/* =========================
+   REVIEW
+========================= */
 
 .review{
-  padding:35px 20px 55px;
+  width:100%;
+
+  padding:
+    35px 20px 50px;
+
   text-align:center;
+
   background:#fff;
 }
 
+
 .review h2{
+  margin:
+    0 0 25px;
+
   color:#253046;
-  margin:0 0 25px;
 }
+
 
 .social-icons{
   display:flex;
-  justify-content:center;
-  gap:30px;
-}
 
-.social-icon{
-  width:52px;
-  height:52px;
-  border-radius:50%;
-
-  display:flex;
   align-items:center;
   justify-content:center;
 
-  background:#c61c1c;
+  gap:25px;
+}
+
+
+.social-icon{
+  width:50px;
+  height:50px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#bd1c1c;
+
   color:#fff;
 
   font-size:20px;
+
   font-weight:bold;
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
-  padding:30px 15px;
-  border-top:1px solid #4caf6a;
-  background:#fff;
+  width:100%;
+
+  padding:
+    25px 15px;
+
+  border-top:
+    1px solid #53a76b;
+
   text-align:center;
-  color:#6b7280;
-  font-size:14px;
+
+  background:#fff;
+
+  color:#777;
+
+  font-size:13px;
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-top{
+  position:fixed;
+
+  right:22px;
+  bottom:20px;
+
+  z-index:20;
+
+  width:55px;
+  height:55px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:0;
+
+  border-radius:4px;
+
+  background:#1010a7;
+
+  color:#fff;
+
+  font-size:35px;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 2px 6px
+    rgba(0,0,0,.2);
+}
+
+
+/* ===================================
+   MOBILE - LIKE SCREENSHOT
+=================================== */
 
 @media(max-width:600px){
 
+
+  /* HEADER */
+
   .top{
-    height:80px;
-    padding:0 6%;
+    height:90px;
+
+    padding:
+      0 20px;
   }
+
+
+  /* BIGGER HEADER LOGO */
 
   .top-logo{
-    width:45px;
-    height:45px;
+    width:72px;
+    height:72px;
   }
+
 
   .menu{
-    font-size:29px;
+    font-size:30px;
   }
+
+
+  /* HERO */
 
   .hero{
-    min-height:360px;
-    padding:35px 6% 40px;
+    min-height:365px;
+
+    padding:
+      35px 6% 40px;
   }
 
+
+  .hero::before{
+    width:230px;
+    height:230px;
+  }
+
+
   .hero h1{
-    margin-bottom:45px;
+    margin-bottom:40px;
+
     font-size:25px;
   }
 
-  .hero::before{
-    top:100px;
-    font-size:160px;
-  }
 
   .search-box label{
     font-size:16px;
   }
 
+
   .search-box input{
-    height:48px;
+    height:49px;
+
     font-size:15px;
   }
 
-  .white-gap{
-    height:30px;
+
+  .submit-btn{
+    margin-top:28px;
   }
 
 
-  /* KEEP 3 PICTURES IN ONE ROW */
+  .white-gap{
+    height:38px;
+  }
+
+
+  /* ===================================
+     SCREENSHOT CARD DESIGN
+  =================================== */
 
   .services{
-    padding:12px 6px 15px;
+    padding:
+      20px 18px 22px;
   }
+
 
   .cards{
-    grid-template-columns:repeat(3,1fr);
-    gap:7px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:38px;
   }
 
+
   .card{
-    height:145px;
-    border-radius:15px;
+    width:100%;
+
+    height:320px;
+
+    border-radius:38px;
+
+    background:#fff;
+
+    box-shadow:
+      0 4px 13px
+      rgba(73,105,120,.30),
+      0 10px 24px
+      rgba(73,105,120,.18);
   }
+
 
   .card-picture{
     width:100%;
+
     height:100%;
+
     object-fit:contain;
+
+    object-position:center;
+
+    border-radius:38px;
+  }
+
+
+  /* ABOUT */
+
+  .about{
+    padding:
+      35px 25px;
   }
 
 
   .about-row{
+    display:grid;
+
     grid-template-columns:1fr;
+
+    gap:35px;
   }
 
+
   .about h2{
-    font-size:27px;
+    margin-bottom:18px;
+
+    font-size:30px;
   }
+
 
   .about p{
     font-size:15px;
+
+    line-height:1.4;
   }
 
+
+  /* SLIDER */
+
   .slider{
-    height:250px;
+    height:260px;
   }
+
+
+  /* RESULT */
 
   .result{
     max-width:100%;
   }
 
+
   .result-item{
-    padding:15px 17px;
-    font-size:17px;
+    padding:
+      15px 17px;
+
+    font-size:16px;
+  }
+
+
+  .result-item b{
+    font-size:16px;
+  }
+
+
+  /* BACK TOP */
+
+  .back-top{
+    width:55px;
+    height:55px;
+
+    right:18px;
+    bottom:18px;
   }
 
 }
 
 
-/* REDUCE MOTION */
+/* =========================
+   SMALL MOBILE
+========================= */
 
-@media(prefers-reduced-motion:reduce){
+@media(max-width:380px){
 
   .card{
-    animation:none;
+    height:285px;
+  }
+
+  .top-logo{
+    width:68px;
+    height:68px;
   }
 
 }
@@ -499,7 +845,9 @@ body{
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="top">
 
@@ -517,7 +865,9 @@ body{
 
 
 
-<!-- ================= SEARCH ================= -->
+<!-- =========================
+     SEARCH
+========================= -->
 
 <section
   class="hero"
@@ -526,15 +876,19 @@ body{
 
   <div class="hero-content">
 
+
     <h1>
       KP Hazara License Verification Portal
     </h1>
 
+
     <div class="search-box">
+
 
       <label for="lic">
         CNIC Number *
       </label>
+
 
       <input
         id="lic"
@@ -545,6 +899,7 @@ body{
         placeholder="Type CNIC Number without dash"
       >
 
+
       <button
         class="submit-btn"
         type="button"
@@ -553,10 +908,12 @@ body{
         Submit
       </button>
 
+
       <div
         id="result"
         class="result"
       ></div>
+
 
     </div>
 
@@ -565,20 +922,21 @@ body{
 </section>
 
 
+
 <div class="white-gap"></div>
 
 
 
-<!-- =========================================
-     ONLY 3 PICTURES
-========================================= -->
+<!-- ===================================
+     THREE IMAGE CARDS
+=================================== -->
 
 <section class="services">
 
   <div class="cards">
 
 
-    <!-- PICTURE 1 -->
+    <!-- CARD 1 -->
 
     <div
       class="card"
@@ -588,33 +946,33 @@ body{
       <img
         src="IMG_0948.jpeg.jpg"
         class="card-picture"
-        alt=""
+        alt="Driving License Verification"
       >
 
     </div>
 
 
-    <!-- PICTURE 2 -->
+    <!-- CARD 2 -->
 
     <div class="card">
 
       <img
         src="IMG_0950.jpeg.jpg"
         class="card-picture"
-        alt=""
+        alt="Arms License Verification"
       >
 
     </div>
 
 
-    <!-- PICTURE 3 -->
+    <!-- CARD 3 -->
 
     <div class="card">
 
       <img
         src="IMG_0951.jpeg.jpg"
         class="card-picture"
-        alt=""
+        alt="Dastak Digital Arms License"
       >
 
     </div>
@@ -626,7 +984,9 @@ body{
 
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="about">
 
@@ -640,18 +1000,22 @@ body{
       </h2>
 
       <p>
-        Driving License Issuance Management System (DLIMS)
-        Phase-II automates the processes for driving license
-        issuance, renewal and upgrades. These activities are
-        carried out throughout the KP Hazara. This system
-        provides quick processing service to public and up to
-        date statistics to the authorities by using state of
-        the art technology and equipment. The system redefines
-        the issuance process of all types of licenses by using
-        a centralized network.
+
+        Driving License Issuance Management System
+        (DLIMS) Phase-II automates the processes for
+        driving license issuance, renewal and upgrades.
+        These activities are carried out throughout the
+        KP Hazara. This system provides quick processing
+        service to public and up to date statistics to
+        the authorities by using state of the art
+        technology and equipment. The system redefines
+        the issuance process of all types of licenses
+        by using a centralized network.
+
       </p>
 
     </div>
+
 
 
     <div>
@@ -682,28 +1046,32 @@ body{
     </div>
 
 
+
     <!-- SLIDER -->
 
     <div>
 
       <div class="slider">
 
+
         <img
           src="IMG_0944.jpeg"
           class="slide active"
-          alt=""
+          alt="Traffic"
         >
+
 
         <img
           src="IMG_0945.jpeg"
           class="slide"
-          alt=""
+          alt="Traffic"
         >
+
 
         <img
           src="IMG_0943.jpeg"
           class="slide"
-          alt=""
+          alt="Traffic"
         >
 
 
@@ -711,6 +1079,7 @@ body{
           class="prev"
           type="button"
           onclick="changeSlide(-1)"
+          aria-label="Previous"
         >
           ‹
         </button>
@@ -720,9 +1089,11 @@ body{
           class="next"
           type="button"
           onclick="changeSlide(1)"
+          aria-label="Next"
         >
           ›
         </button>
+
 
       </div>
 
@@ -735,13 +1106,16 @@ body{
 
 
 
-<!-- ================= REVIEW ================= -->
+<!-- =========================
+     REVIEW
+========================= -->
 
 <section class="review">
 
   <h2>
     Review Us On
   </h2>
+
 
   <div class="social-icons">
 
@@ -763,20 +1137,38 @@ body{
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
 
-  Copyright © 2026 KP Hazara DLIMS | Verify Your License
+  Copyright © 2026 KP Hazara DLIMS |
+  Verify Your License
 
 </footer>
+
+
+
+<!-- BACK TO TOP -->
+
+<button
+  class="back-top"
+  type="button"
+  onclick="goTop()"
+  aria-label="Back to top"
+>
+  ⌃
+</button>
 
 
 
 <script>
 
 
-/* ================= RECORDS ================= */
+/* ===================================
+   RECORD
+=================================== */
 
 const records = {
 
@@ -806,7 +1198,9 @@ const records = {
 
 
 
-/* ================= SEARCH ================= */
+/* ===================================
+   SEARCH
+=================================== */
 
 function searchRecord(){
 
@@ -816,13 +1210,16 @@ function searchRecord(){
   const result =
     document.getElementById("result");
 
+
   const key =
     input.value
     .replace(/\D/g,"")
     .trim();
 
+
   const record =
     records[key];
+
 
   result.style.display =
     "block";
@@ -847,55 +1244,96 @@ function searchRecord(){
 
   result.innerHTML = `
 
+
     <div class="result-item">
+
       <b>CNIC Number :</b>
+
       ${key}
+
     </div>
 
+
     <div class="result-item">
+
       <b>Name :</b>
+
       ${record.name}
+
     </div>
 
+
     <div class="result-item">
+
       <b>Father/Husband Name :</b>
+
       ${record.father}
+
     </div>
 
+
     <div class="result-item">
+
       <b>City / Address :</b>
+
       ${record.address}
+
     </div>
 
+
     <div class="result-item">
+
       <b>License Number :</b>
+
       ${record.licence}
+
     </div>
 
+
     <div class="result-item">
+
       <b>DOB :</b>
+
       ${record.dob}
+
     </div>
 
+
     <div class="result-item">
+
       <b>Blood Group :</b>
+
       ${record.bloodGroup}
+
     </div>
 
+
     <div class="result-item">
+
       <b>Category :</b>
+
       ${record.category}
+
     </div>
 
+
     <div class="result-item">
+
       <b>Issue Date :</b>
+
       ${record.issueDate}
+
     </div>
 
+
     <div class="result-item">
+
       <b>Expiry Date :</b>
+
       ${record.expiryDate}
+
     </div>
+
 
   `;
 
@@ -903,7 +1341,7 @@ function searchRecord(){
 
 
 
-/* ENTER TO SEARCH */
+/* ENTER KEY */
 
 document
 .getElementById("lic")
@@ -922,23 +1360,40 @@ document
 
 
 
-/* FIRST PICTURE CLICK */
+/* FIRST CARD -> SEARCH */
 
 function openSearch(){
 
   document
   .getElementById("licenseSearch")
   .scrollIntoView({
+
     behavior:"smooth"
+
   });
+
+
+  setTimeout(
+    function(){
+
+      document
+      .getElementById("lic")
+      .focus();
+
+    },
+    400
+  );
 
 }
 
 
 
-/* ================= SLIDER ================= */
+/* ===================================
+   SLIDER
+=================================== */
 
 let slideIndex = 0;
+
 
 const slides =
   document.querySelectorAll(".slide");
@@ -949,7 +1404,9 @@ function showSlide(){
   slides.forEach(
     function(slide){
 
-      slide.classList.remove("active");
+      slide
+      .classList
+      .remove("active");
 
     }
   );
@@ -996,6 +1453,24 @@ setInterval(
   },
   4000
 );
+
+
+
+/* ===================================
+   BACK TO TOP
+=================================== */
+
+function goTop(){
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
+
+}
 
 
 </script>
