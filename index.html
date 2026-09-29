@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,9 +10,9 @@
 
 <style>
 
-/* =========================
+/* =====================================
    GENERAL
-========================= */
+===================================== */
 
 *{
   box-sizing:border-box;
@@ -23,15 +24,19 @@ html{
 
 body{
   margin:0;
+  padding:0;
+
   font-family:Arial,Helvetica,sans-serif;
+
   background:#fff;
+
   color:#222;
 }
 
 
-/* =========================
+/* =====================================
    HEADER
-========================= */
+===================================== */
 
 .top{
   width:100%;
@@ -46,30 +51,39 @@ body{
   background:#fff;
 }
 
+
 .top-logo{
   width:78px;
   height:78px;
+
   object-fit:contain;
 }
 
+
 .menu{
   font-size:38px;
+
   font-weight:bold;
+
   color:#111;
+
   cursor:pointer;
 }
 
 
-/* =========================
+/* =====================================
    SEARCH HERO
-========================= */
+===================================== */
 
 .hero{
   position:relative;
 
+  width:100%;
+
   min-height:420px;
 
-  padding:60px 13% 55px;
+  padding:
+    60px 13% 55px;
 
   background:#a2abc8;
 
@@ -77,7 +91,7 @@ body{
 }
 
 
-/* faded logo */
+/* BACKGROUND FADED LOGO */
 
 .hero::before{
   content:"";
@@ -90,7 +104,8 @@ body{
   left:50%;
   top:50%;
 
-  transform:translate(-50%,-43%);
+  transform:
+    translate(-50%,-43%);
 
   background:
     url("IMG_0957.jpeg")
@@ -105,9 +120,11 @@ body{
 
 .hero-content{
   position:relative;
+
   z-index:2;
 
   width:100%;
+
   max-width:1050px;
 
   margin:auto;
@@ -115,24 +132,27 @@ body{
 
 
 .hero h1{
-  margin:0 0 52px;
+  margin:
+    0 0 52px;
 
   text-align:center;
 
-  font-family:Georgia,serif;
+  font-family:
+    Georgia,serif;
 
   font-size:36px;
 
   color:#bd1b1b;
 
   text-shadow:
-    0 2px 2px rgba(0,0,0,.12);
+    0 2px 2px
+    rgba(0,0,0,.12);
 }
 
 
-/* =========================
+/* =====================================
    SEARCH FORM
-========================= */
+===================================== */
 
 .search-box{
   width:100%;
@@ -144,7 +164,7 @@ body{
 
   margin-bottom:10px;
 
-  color:red;
+  color:#e00000;
 
   font-size:18px;
 }
@@ -152,11 +172,14 @@ body{
 
 .search-box input{
   width:100%;
+
   height:53px;
 
-  padding:0 20px;
+  padding:
+    0 20px;
 
-  border:1px solid #ddd;
+  border:
+    1px solid #ddd;
 
   border-radius:30px;
 
@@ -178,9 +201,11 @@ body{
 .submit-btn{
   margin-top:38px;
 
-  padding:12px 23px;
+  padding:
+    12px 23px;
 
-  border:2px solid #fff;
+  border:
+    2px solid #fff;
 
   border-radius:9px;
 
@@ -193,7 +218,8 @@ body{
   cursor:pointer;
 
   box-shadow:
-    0 2px 3px rgba(0,0,0,.2);
+    0 2px 3px
+    rgba(0,0,0,.2);
 }
 
 
@@ -202,14 +228,15 @@ body{
 }
 
 
-/* =========================
+/* =====================================
    SEARCH RESULT
-========================= */
+===================================== */
 
 .result{
   display:none;
 
   width:100%;
+
   max-width:520px;
 
   margin-top:30px;
@@ -221,16 +248,19 @@ body{
   border-radius:6px;
 
   box-shadow:
-    0 4px 15px rgba(0,0,0,.15);
+    0 4px 15px
+    rgba(0,0,0,.15);
 }
 
 
 .result-item{
-  padding:17px 20px;
+  padding:
+    17px 20px;
 
   background:#f7f8f8;
 
-  border-bottom:1px solid #333;
+  border-bottom:
+    1px solid #333;
 
   color:#6b7280;
 
@@ -267,31 +297,37 @@ body{
 }
 
 
-/* =========================
-   WHITE GAP
-========================= */
+/* =====================================
+   WHITE SPACE
+===================================== */
 
 .white-gap{
+  width:100%;
+
   height:50px;
+
   background:#fff;
 }
 
 
-/* =========================================
-   3 CARDS
-========================================= */
+/* =====================================
+   MIDDLE 3 PICTURES
+   NO EXTRA WHITE BOX
+===================================== */
 
 .services{
   width:100%;
 
-  padding:15px 10%;
+  padding:
+    15px 10%;
 
-  background:#eef1f2;
+  background:#eef0f1;
 }
 
 
 .cards{
   width:100%;
+
   max-width:1100px;
 
   margin:auto;
@@ -305,72 +341,122 @@ body{
 }
 
 
-/* CARD */
+/* =====================================
+   IMAGE WRAPPER
+   NO CARD / NO SHADOW
+===================================== */
 
 .card{
   width:100%;
 
-  height:220px;
+  margin:0;
 
-  display:flex;
+  padding:0;
 
-  align-items:center;
-  justify-content:center;
+  background:transparent;
 
-  overflow:hidden;
+  border:0;
 
-  background:#fff;
+  border-radius:0;
 
-  border-radius:25px;
+  box-shadow:none;
 
-  box-shadow:
-    0 3px 10px rgba(68,95,105,.25),
-    0 8px 18px rgba(68,95,105,.18);
+  overflow:visible;
 
   cursor:pointer;
 
+
+  /* FADE-UP START */
+
+  opacity:0;
+
+  transform:
+    translateY(45px);
+
   transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 
-.card:hover{
-  transform:translateY(-4px);
+/* =====================================
+   WHEN VISIBLE
+===================================== */
 
-  box-shadow:
-    0 6px 15px rgba(68,95,105,.30),
-    0 10px 22px rgba(68,95,105,.20);
+.card.reveal{
+  opacity:1;
+
+  transform:
+    translateY(0);
 }
 
 
-.card:active{
-  transform:scale(.98);
+/* DELAY SECOND IMAGE */
+
+.card:nth-child(2){
+  transition-delay:.15s;
 }
 
 
-/* FULL IMAGE */
+/* DELAY THIRD IMAGE */
+
+.card:nth-child(3){
+  transition-delay:.30s;
+}
+
+
+/* =====================================
+   ACTUAL IMAGE
+===================================== */
 
 .card-picture{
   display:block;
 
   width:100%;
-  height:100%;
+
+  height:auto;
+
+  margin:0;
+
+  padding:0;
 
   object-fit:contain;
 
   object-position:center;
+
+  border:0;
+
+  border-radius:0;
+
+  box-shadow:none;
 }
 
 
-/* =========================
+/* =====================================
+   SMALL HOVER EFFECT
+===================================== */
+
+.card:hover{
+  transform:
+    translateY(-4px);
+}
+
+
+.card.reveal:hover{
+  transform:
+    translateY(-4px);
+}
+
+
+/* =====================================
    ABOUT
-========================= */
+===================================== */
 
 .about{
   width:100%;
 
-  padding:28px 2.5% 35px;
+  padding:
+    28px 2.5% 35px;
 
   background:#168fc8;
 
@@ -380,6 +466,7 @@ body{
 
 .about-row{
   width:100%;
+
   max-width:1250px;
 
   margin:auto;
@@ -396,16 +483,19 @@ body{
 
 
 .about h2{
-  margin:0 0 25px;
+  margin:
+    0 0 25px;
 
   color:#b51b1b;
 
-  font-family:Georgia,serif;
+  font-family:
+    Georgia,serif;
 
   font-size:31px;
 
   text-shadow:
-    0 2px 2px rgba(0,0,0,.25);
+    0 2px 2px
+    rgba(0,0,0,.25);
 }
 
 
@@ -418,14 +508,15 @@ body{
 }
 
 
-/* =========================
+/* =====================================
    SLIDER
-========================= */
+===================================== */
 
 .slider{
   position:relative;
 
   width:100%;
+
   height:350px;
 
   overflow:hidden;
@@ -440,13 +531,15 @@ body{
   inset:0;
 
   width:100%;
+
   height:100%;
 
   object-fit:cover;
 
   opacity:0;
 
-  transform:scale(1.03);
+  transform:
+    scale(1.03);
 
   transition:
     opacity .7s ease,
@@ -457,7 +550,8 @@ body{
 .slide.active{
   opacity:1;
 
-  transform:scale(1);
+  transform:
+    scale(1);
 }
 
 
@@ -467,11 +561,13 @@ body{
 
   top:50%;
 
-  transform:translateY(-50%);
+  transform:
+    translateY(-50%);
 
   z-index:5;
 
   width:43px;
+
   height:60px;
 
   border:0;
@@ -497,12 +593,13 @@ body{
 }
 
 
-/* =========================
+/* =====================================
    REVIEW
-========================= */
+===================================== */
 
 .review{
-  padding:40px 20px 55px;
+  padding:
+    40px 20px 55px;
 
   text-align:center;
 
@@ -511,7 +608,8 @@ body{
 
 
 .review h2{
-  margin:0 0 25px;
+  margin:
+    0 0 25px;
 
   color:#253046;
 }
@@ -528,11 +626,13 @@ body{
 
 .social-icon{
   width:52px;
+
   height:52px;
 
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   border-radius:50%;
@@ -547,12 +647,13 @@ body{
 }
 
 
-/* =========================
+/* =====================================
    FOOTER
-========================= */
+===================================== */
 
 .footer{
-  padding:28px 15px;
+  padding:
+    28px 15px;
 
   border-top:
     1px solid #4fa768;
@@ -567,19 +668,21 @@ body{
 }
 
 
-/* =========================
+/* =====================================
    BACK TO TOP
-========================= */
+===================================== */
 
 .back-top{
   position:fixed;
 
   right:25px;
+
   bottom:22px;
 
   z-index:50;
 
   width:55px;
+
   height:55px;
 
   border:0;
@@ -595,13 +698,14 @@ body{
   cursor:pointer;
 
   box-shadow:
-    0 2px 7px rgba(0,0,0,.25);
+    0 2px 7px
+    rgba(0,0,0,.25);
 }
 
 
-/* =========================================
+/* =====================================
    IPAD / TABLET
-========================================= */
+===================================== */
 
 @media(max-width:1100px){
 
@@ -609,9 +713,11 @@ body{
     padding:0 10%;
   }
 
+
   .top-logo{
-    width:72px;
-    height:72px;
+    width:75px;
+
+    height:75px;
   }
 
 
@@ -621,25 +727,19 @@ body{
   }
 
 
+  /* THREE PICTURES ONE ROW */
+
   .services{
     padding:
-      14px 10%;
+      15px 10%;
   }
 
-
-  /* IMPORTANT:
-     KEEP ALL 3 CARDS IN ONE ROW ON IPAD */
 
   .cards{
     grid-template-columns:
       repeat(3,1fr);
 
     gap:25px;
-  }
-
-
-  .card{
-    height:220px;
   }
 
 
@@ -668,9 +768,9 @@ body{
 }
 
 
-/* =========================================
-   PHONE ONLY
-========================================= */
+/* =====================================
+   PHONE
+===================================== */
 
 @media(max-width:600px){
 
@@ -678,27 +778,29 @@ body{
   /* HEADER */
 
   .top{
-    height:90px;
+    height:88px;
 
-    padding:0 20px;
+    padding:
+      0 18px;
   }
 
 
   .top-logo{
-    width:72px;
-    height:72px;
+    width:70px;
+
+    height:70px;
   }
 
 
   .menu{
-    font-size:31px;
+    font-size:30px;
   }
 
 
-  /* HERO */
+  /* SEARCH */
 
   .hero{
-    min-height:365px;
+    min-height:360px;
 
     padding:
       35px 6% 40px;
@@ -707,6 +809,7 @@ body{
 
   .hero::before{
     width:230px;
+
     height:230px;
   }
 
@@ -714,7 +817,7 @@ body{
   .hero h1{
     margin-bottom:40px;
 
-    font-size:25px;
+    font-size:24px;
   }
 
 
@@ -740,37 +843,28 @@ body{
   }
 
 
-  /* =========================
-     PHONE CARDS
-  ========================= */
+  /* =====================================
+     3 PICTURES ONE ROW
+  ===================================== */
 
   .services{
     padding:
-      20px 18px;
+      15px 7px;
   }
 
 
   .cards{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      repeat(3,1fr);
 
-    gap:28px;
-  }
-
-
-  .card{
-    width:100%;
-
-    height:300px;
-
-    border-radius:35px;
+    gap:8px;
   }
 
 
   .card-picture{
     width:100%;
-    height:100%;
 
-    object-fit:contain;
+    height:auto;
   }
 
 
@@ -778,7 +872,7 @@ body{
 
   .about{
     padding:
-      35px 25px;
+      35px 22px;
   }
 
 
@@ -790,7 +884,7 @@ body{
 
 
   .about h2{
-    font-size:30px;
+    font-size:29px;
   }
 
 
@@ -821,14 +915,38 @@ body{
   }
 
 
-  /* BACK BUTTON */
+  /* BACK TOP */
 
   .back-top{
     width:52px;
+
     height:52px;
 
     right:18px;
+
     bottom:18px;
+  }
+
+}
+
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  .card{
+    opacity:1;
+
+    transform:none;
+
+    transition:none;
+  }
+
+
+  .slide{
+    transition:none;
   }
 
 }
@@ -841,9 +959,9 @@ body{
 <body>
 
 
-<!-- =========================
+<!-- =====================================
      HEADER
-========================= -->
+===================================== -->
 
 <header class="top">
 
@@ -861,9 +979,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================
      SEARCH
-========================= -->
+===================================== -->
 
 <section
   class="hero"
@@ -923,16 +1041,17 @@ body{
 
 
 
-<!-- =========================================
-     THREE CARDS
-========================================= -->
+<!-- =====================================
+     NEW MIDDLE 3 PICTURES
+     NO EXTRA BOX
+===================================== -->
 
 <section class="services">
 
   <div class="cards">
 
 
-    <!-- CARD 1 -->
+    <!-- PICTURE 1 -->
 
     <div
       class="card"
@@ -940,7 +1059,7 @@ body{
     >
 
       <img
-        src="IMG_0948.jpeg.jpg"
+        src="IMG_0948.jpeg.jpg.jpeg"
         class="card-picture"
         alt="Driving License Verification"
       >
@@ -949,12 +1068,12 @@ body{
 
 
 
-    <!-- CARD 2 -->
+    <!-- PICTURE 2 -->
 
     <div class="card">
 
       <img
-        src="IMG_0950.jpeg.jpg"
+        src="IMG_0950.jpeg.jpg.jpeg"
         class="card-picture"
         alt="Arms License Verification"
       >
@@ -963,12 +1082,12 @@ body{
 
 
 
-    <!-- CARD 3 -->
+    <!-- PICTURE 3 -->
 
     <div class="card">
 
       <img
-        src="IMG_0951.jpeg.jpg"
+        src="IMG_0951.jpeg.jpg.jpeg"
         class="card-picture"
         alt="Dastak Digital Arms License"
       >
@@ -982,9 +1101,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================
      ABOUT
-========================= -->
+===================================== -->
 
 <section class="about">
 
@@ -1110,9 +1229,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================
      REVIEW
-========================= -->
+===================================== -->
 
 <section class="review">
 
@@ -1141,9 +1260,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================
      FOOTER
-========================= -->
+===================================== -->
 
 <footer class="footer">
 
@@ -1154,9 +1273,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================
      BACK TO TOP
-========================= -->
+===================================== -->
 
 <button
   class="back-top"
@@ -1172,9 +1291,9 @@ body{
 <script>
 
 
-/* =========================================
+/* =====================================
    RECORDS
-========================================= */
+===================================== */
 
 const records = {
 
@@ -1204,9 +1323,9 @@ const records = {
 
 
 
-/* =========================================
+/* =====================================
    SEARCH
-========================================= */
+===================================== */
 
 function searchRecord(){
 
@@ -1348,7 +1467,9 @@ function searchRecord(){
 
 
 
-/* ENTER KEY SEARCH */
+/* =====================================
+   ENTER KEY SEARCH
+===================================== */
 
 document
 .getElementById("lic")
@@ -1367,9 +1488,9 @@ document
 
 
 
-/* =========================================
-   FIRST CARD CLICK
-========================================= */
+/* =====================================
+   FIRST IMAGE CLICK
+===================================== */
 
 function openSearch(){
 
@@ -1397,9 +1518,9 @@ function openSearch(){
 
 
 
-/* =========================================
+/* =====================================
    SLIDER
-========================================= */
+===================================== */
 
 let slideIndex = 0;
 
@@ -1467,9 +1588,64 @@ setInterval(
 
 
 
-/* =========================================
+/* =====================================
+   SCROLL REVEAL / FADE-UP
+===================================== */
+
+const revealCards =
+  document.querySelectorAll(".card");
+
+
+const revealObserver =
+  new IntersectionObserver(
+
+    function(entries){
+
+      entries.forEach(
+
+        function(entry){
+
+          if(entry.isIntersecting){
+
+            entry.target
+            .classList
+            .add("reveal");
+
+
+            revealObserver
+            .unobserve(entry.target);
+
+          }
+
+        }
+
+      );
+
+    },
+
+    {
+      threshold:0.15
+    }
+
+  );
+
+
+revealCards.forEach(
+
+  function(card){
+
+    revealObserver
+    .observe(card);
+
+  }
+
+);
+
+
+
+/* =====================================
    BACK TO TOP
-========================================= */
+===================================== */
 
 function goTop(){
 
@@ -1488,4 +1664,5 @@ function goTop(){
 
 
 </body>
+
 </html>
