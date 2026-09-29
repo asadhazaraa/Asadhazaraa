@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +7,6 @@
 <title>KP Hazara License Verification Portal</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
   box-sizing:border-box;
@@ -24,53 +19,47 @@ html{
 }
 
 body{
-  font-family:Roboto,Arial,sans-serif;
-  background:#ffffff;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
   color:#222;
 }
 
-
-/* =====================================================
-   MAIN TOP HEADER
-===================================================== */
+/* =========================
+   TOP HEADER
+========================= */
 
 .main-header{
-  width:100%;
-  height:115px;
+  height:90px;
+  padding:0 20px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 10%;
-
-  background:#ffffff;
+  background:#fff;
 }
 
 .main-logo{
-  width:80px;
-  height:80px;
+  width:70px;
+  height:70px;
   object-fit:contain;
 }
 
 .menu{
-  font-size:36px;
+  font-size:30px;
   color:#111;
-  cursor:pointer;
 }
 
-
-/* =====================================================
-   SEARCH / HERO
-===================================================== */
+/* =========================
+   SEARCH AREA
+========================= */
 
 .hero{
   position:relative;
 
-  width:100%;
   min-height:400px;
 
-  padding:50px 13% 45px;
+  padding:35px 22px;
 
   background:#98a5c2;
 
@@ -82,8 +71,8 @@ body{
 
   position:absolute;
 
-  width:300px;
-  height:300px;
+  width:230px;
+  height:230px;
 
   left:50%;
   top:50%;
@@ -92,35 +81,31 @@ body{
 
   background:
     url("IMG_0957.jpeg")
-    center center / contain
+    center/contain
     no-repeat;
 
   opacity:.05;
-
-  pointer-events:none;
 }
 
 .hero-inner{
   position:relative;
   z-index:2;
 
-  width:100%;
   max-width:1050px;
 
-  margin:0 auto;
+  margin:auto;
 }
 
 .hero-title{
-  margin-bottom:45px;
+  margin-bottom:40px;
 
   text-align:center;
 
-  color:#ad151a;
+  color:#b0161b;
 
   font-family:Georgia,serif;
 
-  font-size:35px;
-  font-weight:700;
+  font-size:25px;
 }
 
 .search-box label{
@@ -130,68 +115,65 @@ body{
 
   color:#d90000;
 
-  font-size:17px;
+  font-size:16px;
 }
 
 .search-box input{
-  display:block;
-
   width:100%;
-  height:52px;
+  height:49px;
 
   padding:0 20px;
-
-  background:#fff;
 
   border:1px solid #ddd;
   border-radius:30px;
 
+  background:#fff;
+
   outline:none;
 
-  font-size:16px;
+  font-size:15px;
 }
 
 .submit{
   width:88px;
   height:38px;
 
-  margin-top:35px;
+  margin-top:30px;
 
   background:#dc3232;
+
   color:#fff;
 
   border:2px solid #e8e8ee;
+
   border-radius:8px;
 
   font-size:16px;
 
-  box-shadow:
-    0 2px 6px rgba(0,0,0,.25);
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
 
   cursor:pointer;
 }
 
-
-/* =====================================================
+/* =========================
    RESULT
-===================================================== */
+========================= */
 
 .result{
   display:none;
 
   width:100%;
-  max-width:550px;
+  max-width:520px;
 
-  margin-top:30px;
+  margin-top:25px;
 
   background:#fff;
 
-  border-radius:8px;
+  border-radius:7px;
 
   overflow:hidden;
 
-  box-shadow:
-    0 4px 15px rgba(0,0,0,.18);
+  box-shadow:0 4px 15px rgba(0,0,0,.18);
 }
 
 .result-item{
@@ -224,33 +206,29 @@ body{
   font-weight:bold;
 }
 
-
-/* =====================================================
-   SMALL STRIP
-===================================================== */
+/* =========================
+   STRIP
+========================= */
 
 .strip{
-  width:100%;
   height:22px;
-
   background:#f1f4f8;
 }
 
-
-/* =====================================================
-   SERVICES
-===================================================== */
+/* ======================================
+   EXISTING 3 CARD PICTURES
+====================================== */
 
 .services{
   width:100%;
+
+  padding:11px;
 
   background:#eeeeee;
 }
 
 .cards{
   width:100%;
-
-  padding:11px;
 
   display:flex;
   flex-direction:column;
@@ -260,37 +238,20 @@ body{
   gap:22px;
 }
 
-
-/* =====================================================
-   CARD
-===================================================== */
-
 .card{
+  display:block;
+
   width:378px;
   max-width:100%;
 
-  background:#fff;
+  padding:0;
+  margin:0;
 
-  border-radius:22px;
+  background:transparent;
 
-  text-align:center;
+  border:0;
 
   text-decoration:none;
-
-  color:inherit;
-
-  box-shadow:
-    0 2px 10px rgba(80,110,140,.35);
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  overflow:hidden;
 
   opacity:0;
 
@@ -301,34 +262,8 @@ body{
     transform .7s ease;
 }
 
-
-/* =====================================================
-   EXACT SCREENSHOT CARD HEIGHTS
-===================================================== */
-
-/* Driving License */
-.card:nth-child(1){
-  height:184px;
-}
-
-/* Arms License */
-.card:nth-child(2){
-  height:187px;
-}
-
-/* Dastak */
-.card:nth-child(3){
-  height:176px;
-}
-
-
-/* =====================================================
-   CARD ANIMATION
-===================================================== */
-
 .card.show{
   opacity:1;
-
   transform:translateY(0);
 }
 
@@ -340,89 +275,41 @@ body{
   transition-delay:.24s;
 }
 
+/* FULL CARD IMAGE */
 
-/* =====================================================
-   CARD LOGOS
-===================================================== */
-
-.logo{
+.card-picture{
   display:block;
 
+  width:100%;
+  height:auto;
+
+  margin:0;
+
   object-fit:contain;
-
-  margin:0 auto 8px;
 }
 
+/* =========================
+   ABOUT
+========================= */
 
-/* Traffic Police logo = 88 x 88 */
-.card:nth-child(1) .logo{
-  width:88px;
-  height:88px;
-}
-
-
-/* KPK Police logo = 82 x 82 */
-.card:nth-child(2) .logo{
-  width:82px;
-  height:82px;
-}
-
-
-/* Dastak logo = 80 x 80 */
-.card:nth-child(3) .logo{
-  width:80px;
-  height:80px;
-}
-
-
-/* =====================================================
-   CARD TEXT
-===================================================== */
-
-.card h3{
-  color:#a80f14;
-
-  font-size:18px;
-  font-weight:700;
-
-  line-height:1.3;
-}
-
-.card p{
-  margin-top:8px;
-
-  color:#777;
-
-  font-size:15px;
-}
-
-
-/* =====================================================
-   ABOUT SECTION
-===================================================== */
-
-.about-section{
+.about{
   width:100%;
 
-  padding:0 3% 35px;
+  padding:0 23px 35px;
 
   background:#1287c4;
 
   color:#e5f3f9;
 }
 
-
-/* About heading top bar */
-.about-heading{
-  width:100%;
+.about-title{
   height:65px;
 
   display:flex;
-
   align-items:center;
 }
 
-.about-heading h2{
+.about-title h2{
   color:#a80f14;
 
   font-family:Georgia,serif;
@@ -432,31 +319,22 @@ body{
   font-weight:800;
 }
 
-
-/* =====================================================
-   ABOUT CONTENT
-===================================================== */
-
 .about-grid{
-  width:100%;
-
-  max-width:1250px;
-
-  margin:0 auto;
-
   display:grid;
 
-  grid-template-columns:
-    1fr
-    1fr
-    1.8fr;
+  grid-template-columns:1fr;
 
   gap:35px;
-
-  align-items:start;
 }
 
-.about-column h2{
+.about-text p,
+.features p{
+  font-size:15px;
+
+  line-height:1.45;
+}
+
+.features h2{
   margin-bottom:20px;
 
   color:#a80f14;
@@ -466,25 +344,15 @@ body{
   font-size:28px;
 }
 
-.about-column p{
-  color:#e5f3f9;
-
-  font-size:15px;
-
-  line-height:1.45;
-}
-
-
-/* =====================================================
+/* =========================
    SLIDER
-===================================================== */
+========================= */
 
 .slider{
   position:relative;
 
   width:100%;
-
-  height:340px;
+  height:250px;
 
   overflow:hidden;
 }
@@ -501,17 +369,11 @@ body{
 
   opacity:0;
 
-  transform:scale(1.03);
-
-  transition:
-    opacity .7s ease,
-    transform 1s ease;
+  transition:opacity .7s ease;
 }
 
 .slide.active{
   opacity:1;
-
-  transform:scale(1);
 }
 
 .prev,
@@ -522,10 +384,10 @@ body{
 
   transform:translateY(-50%);
 
-  z-index:10;
+  z-index:5;
 
-  width:42px;
-  height:58px;
+  width:40px;
+  height:55px;
 
   border:0;
 
@@ -533,7 +395,7 @@ body{
 
   color:#fff;
 
-  font-size:32px;
+  font-size:30px;
 
   cursor:pointer;
 }
@@ -546,14 +408,11 @@ body{
   right:0;
 }
 
-
-/* =====================================================
+/* =========================
    REVIEW
-===================================================== */
+========================= */
 
 .review{
-  width:100%;
-
   padding:40px 20px 50px;
 
   background:#fff;
@@ -565,8 +424,6 @@ body{
   margin-bottom:25px;
 
   color:#253046;
-
-  font-size:25px;
 }
 
 .socials{
@@ -592,21 +449,15 @@ body{
 
   color:#fff;
 
-  font-size:18px;
   font-weight:bold;
 }
 
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 .footer{
-  width:100%;
-
   padding:25px 15px;
-
-  background:#fff;
 
   border-top:1px solid #4fa768;
 
@@ -617,10 +468,9 @@ body{
   font-size:14px;
 }
 
-
-/* =====================================================
-   SCROLL UP BUTTON
-===================================================== */
+/* =========================
+   TOP BUTTON
+========================= */
 
 .top-btn{
   position:fixed;
@@ -633,259 +483,52 @@ body{
   width:35px;
   height:35px;
 
+  border:0;
+
   background:#00008b;
 
   color:#fff;
-
-  border:0;
 
   font-size:20px;
 
   cursor:pointer;
 }
 
+/* ======================================
+   TABLET / DESKTOP
+====================================== */
 
-/* =====================================================
-   MOBILE — SCREENSHOT BASED ON 400px WIDTH
-===================================================== */
-
-@media(max-width:600px){
-
-  /* TOP */
+@media(min-width:700px){
 
   .main-header{
-    height:88px;
+    height:115px;
 
-    padding:0 20px;
+    padding:0 10%;
   }
 
   .main-logo{
-    width:68px;
-    height:68px;
-  }
-
-  .menu{
-    font-size:30px;
-  }
-
-
-  /* HERO */
-
-  .hero{
-    min-height:400px;
-
-    padding:
-      35px
-      22px
-      35px;
-  }
-
-  .hero::before{
-    width:220px;
-    height:220px;
-  }
-
-  .hero-title{
-    margin-bottom:38px;
-
-    font-size:24px;
-  }
-
-  .search-box label{
-    font-size:16px;
-  }
-
-  .search-box input{
-    height:48px;
-
-    font-size:15px;
-  }
-
-
-  /* EXACT SUBMIT SIZE */
-
-  .submit{
-    width:88px;
-    height:38px;
-
-    margin-top:30px;
-
-    font-size:16px;
-  }
-
-
-  /* EXACT STRIP */
-
-  .strip{
-    height:22px;
-  }
-
-
-  /* ==============================================
-     CARDS — SCREENSHOT EXACT MOBILE MEASUREMENTS
-  ============================================== */
-
-  .cards{
-    padding:
-      11px
-      11px
-      12px;
-
-    gap:22px;
-  }
-
-
-  .card{
-    width:378px;
-
-    max-width:100%;
-
-    border-radius:22px;
-  }
-
-
-  /* FIRST = 378 × 184 */
-
-  .card:nth-child(1){
-    height:184px;
-  }
-
-
-  /* SECOND = 378 × 187 */
-
-  .card:nth-child(2){
-    height:187px;
-  }
-
-
-  /* THIRD = 378 × 176 */
-
-  .card:nth-child(3){
-    height:176px;
-  }
-
-
-  /* LOGO 1 */
-
-  .card:nth-child(1) .logo{
-    width:88px;
-    height:88px;
-  }
-
-
-  /* LOGO 2 */
-
-  .card:nth-child(2) .logo{
-    width:82px;
-    height:82px;
-  }
-
-
-  /* LOGO 3 */
-
-  .card:nth-child(3) .logo{
     width:80px;
     height:80px;
   }
 
+  .hero{
+    padding:55px 13%;
 
-  /* TITLE */
-
-  .card h3{
-    font-size:18px;
+    min-height:420px;
   }
 
-
-  /* SUBTITLE */
-
-  .card p{
-    margin-top:8px;
-
-    font-size:15px;
+  .hero-title{
+    font-size:35px;
   }
 
-
-  /* ==============================================
-     ABOUT
-  ============================================== */
-
-  .about-section{
-    padding:
-      0
-      23px
-      35px;
+  .services{
+    padding:25px;
   }
-
-
-  /* EXACT 65px ABOUT BAR */
-
-  .about-heading{
-    height:65px;
-  }
-
-  .about-heading h2{
-    font-size:30px;
-  }
-
-
-  .about-grid{
-    grid-template-columns:1fr;
-
-    gap:35px;
-  }
-
-  .about-column h2{
-    font-size:28px;
-  }
-
-  .about-column p{
-    font-size:15px;
-
-    line-height:1.45;
-  }
-
-
-  /* SLIDER */
-
-  .slider{
-    height:250px;
-  }
-
-
-  /* RESULT */
-
-  .result{
-    max-width:100%;
-  }
-
-
-  /* EXACT 35 × 35 SCROLL BUTTON */
-
-  .top-btn{
-    right:30px;
-    bottom:30px;
-
-    width:35px;
-    height:35px;
-
-    font-size:20px;
-  }
-
-}
-
-
-/* =====================================================
-   TABLET / DESKTOP CARDS
-===================================================== */
-
-@media(min-width:700px){
 
   .cards{
     max-width:1150px;
 
-    margin:0 auto;
-
-    padding:25px;
+    margin:auto;
 
     flex-direction:row;
 
@@ -899,39 +542,50 @@ body{
   .card{
     width:31%;
 
-    max-width:378px;
+    max-width:350px;
   }
 
+  .about{
+    padding:30px 3% 40px;
+  }
+
+  .about-grid{
+    max-width:1250px;
+
+    margin:auto;
+
+    grid-template-columns:1fr 1fr 1.8fr;
+
+    gap:35px;
+  }
+
+  .slider{
+    height:340px;
+  }
 }
 
-
-/* =====================================================
+/* =========================
    REDUCED MOTION
-===================================================== */
+========================= */
 
 @media(prefers-reduced-motion:reduce){
 
   .card{
     opacity:1;
-
     transform:none;
-
     transition:none;
   }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     MAIN HEADER
-===================================================== -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="main-header">
 
@@ -947,10 +601,9 @@ body{
 
 </header>
 
-
-<!-- =====================================================
-     SEARCH HERO
-===================================================== -->
+<!-- =========================
+     SEARCH
+========================= -->
 
 <section
   class="hero"
@@ -963,13 +616,11 @@ body{
       KP Hazara License Verification Portal
     </h1>
 
-
     <div class="search-box">
 
       <label for="lic">
         CNIC Number *
       </label>
-
 
       <input
         id="lic"
@@ -980,7 +631,6 @@ body{
         placeholder="Type CNIC Number without dash"
       >
 
-
       <button
         class="submit"
         type="button"
@@ -988,7 +638,6 @@ body{
       >
         Submit
       </button>
-
 
       <div
         id="result"
@@ -1001,26 +650,17 @@ body{
 
 </section>
 
-
-<!-- =====================================================
-     STRIP
-===================================================== -->
-
 <div class="strip"></div>
 
-
-<!-- =====================================================
-     VERIFICATION CARDS
-===================================================== -->
+<!-- ======================================
+     YOUR EXISTING 3 PICTURES
+====================================== -->
 
 <section class="services">
 
   <div class="cards">
 
-
-    <!-- ======================
-         CARD 1
-    ======================= -->
+    <!-- 1 DRIVING -->
 
     <a
       class="card"
@@ -1028,89 +668,50 @@ body{
     >
 
       <img
-        class="logo"
-        src="traffic-police.png"
-        alt="Traffic Police"
+        class="card-picture"
+        src="IMG_0948.jpeg.jpg.jpeg"
+        alt="Driving License Verification"
       >
-
-      <h3>
-        Driving License Verification
-      </h3>
-
-      <p>
-        Directorate of Transport
-      </p>
 
     </a>
 
 
-    <!-- ======================
-         CARD 2
-    ======================= -->
+    <!-- 2 ARMS -->
 
-    <a
-      class="card"
-      href="#"
-    >
+    <div class="card">
 
       <img
-        class="logo"
-        src="kpk-police.png"
-        alt="KPK Police"
+        class="card-picture"
+        src="IMG_0950.jpeg.jpg.jpeg"
+        alt="Arms License Verification"
       >
 
-      <h3>
-        Arms License Verification
-      </h3>
-
-      <p>
-        Home Department
-      </p>
-
-    </a>
+    </div>
 
 
-    <!-- ======================
-         CARD 3
-    ======================= -->
+    <!-- 3 DASTAK -->
 
-    <a
-      class="card"
-      href="#"
-    >
+    <div class="card">
 
       <img
-        class="logo"
-        src="dastak.png"
-        alt="Dastak"
+        class="card-picture"
+        src="IMG_0951.jpeg.jpg.jpeg"
+        alt="Dastak Digital Arms License"
       >
 
-      <h3>
-        Dastak Digital Arms License
-      </h3>
-
-      <p>
-        Home Department
-      </p>
-
-    </a>
-
+    </div>
 
   </div>
 
 </section>
 
+<!-- =========================
+     ABOUT
+========================= -->
 
-<!-- =====================================================
-     ABOUT SECTION
-===================================================== -->
+<section class="about">
 
-<section class="about-section">
-
-
-  <!-- EXACT ABOUT BAR -->
-
-  <div class="about-heading">
+  <div class="about-title">
 
     <h2>
       About Us
@@ -1118,13 +719,9 @@ body{
 
   </div>
 
-
   <div class="about-grid">
 
-
-    <!-- ABOUT -->
-
-    <div class="about-column">
+    <div class="about-text">
 
       <p>
         Driving License Issuance Management System
@@ -1141,10 +738,7 @@ body{
 
     </div>
 
-
-    <!-- FEATURES -->
-
-    <div class="about-column">
+    <div class="features">
 
       <h2>
         Key Features
@@ -1169,73 +763,59 @@ body{
 
     </div>
 
-
     <!-- SLIDER -->
 
-    <div>
+    <div class="slider">
 
-      <div class="slider">
+      <img
+        src="IMG_0944.jpeg"
+        class="slide active"
+        alt="Traffic"
+      >
 
+      <img
+        src="IMG_0945.jpeg"
+        class="slide"
+        alt="Traffic"
+      >
 
-        <img
-          src="IMG_0944.jpeg"
-          class="slide active"
-          alt="Traffic"
-        >
+      <img
+        src="IMG_0943.jpeg"
+        class="slide"
+        alt="Traffic"
+      >
 
+      <button
+        class="prev"
+        type="button"
+        onclick="changeSlide(-1)"
+      >
+        ‹
+      </button>
 
-        <img
-          src="IMG_0945.jpeg"
-          class="slide"
-          alt="Traffic"
-        >
-
-
-        <img
-          src="IMG_0943.jpeg"
-          class="slide"
-          alt="Traffic"
-        >
-
-
-        <button
-          class="prev"
-          type="button"
-          onclick="changeSlide(-1)"
-        >
-          ‹
-        </button>
-
-
-        <button
-          class="next"
-          type="button"
-          onclick="changeSlide(1)"
-        >
-          ›
-        </button>
-
-
-      </div>
+      <button
+        class="next"
+        type="button"
+        onclick="changeSlide(1)"
+      >
+        ›
+      </button>
 
     </div>
-
 
   </div>
 
 </section>
 
-
-<!-- =====================================================
+<!-- =========================
      REVIEW
-===================================================== -->
+========================= -->
 
 <section class="review">
 
   <h2>
     Review Us On
   </h2>
-
 
   <div class="socials">
 
@@ -1255,22 +835,18 @@ body{
 
 </section>
 
-
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer class="footer">
-
   Copyright © 2026 KP Hazara DLIMS |
   Verify Your License
-
 </footer>
 
-
-<!-- =====================================================
-     SCROLL UP
-===================================================== -->
+<!-- =========================
+     TOP
+========================= -->
 
 <button
   class="top-btn"
@@ -1280,31 +856,11 @@ body{
   &#8963;
 </button>
 
-
 <script>
 
-/* =====================================================
+/* =========================
    RECORDS
-===================================================== */
-
-/*
-  Apne records yahan add karein.
-
-  Example:
-
-  "1111111111111":{
-    name:"Example Name",
-    father:"Example Father",
-    address:"Example Address",
-    licence:"ABC-001",
-    dob:"01-01-2000",
-    bloodGroup:"B+",
-    category:"M.CYCLE + MOTOR CAR",
-    issueDate:"01-01-2025",
-    expiryDate:"01-01-2030"
-  }
-
-*/
+========================= */
 
 const records = {
 
@@ -1332,148 +888,96 @@ const records = {
 
 };
 
-
-/* =====================================================
+/* =========================
    SEARCH
-===================================================== */
+========================= */
 
 function searchRecord(){
 
   const input =
     document.getElementById("lic");
 
-
   const result =
     document.getElementById("result");
-
 
   const key =
     input.value
     .replace(/\D/g,"")
     .trim();
 
-
   const record =
     records[key];
 
-
-  result.style.display =
-    "block";
-
+  result.style.display="block";
 
   if(!record){
 
-    result.innerHTML = `
-
+    result.innerHTML=`
       <div class="not-found">
         Record not found
       </div>
-
     `;
 
     return;
   }
 
-
-  result.innerHTML = `
+  result.innerHTML=`
 
     <div class="result-item">
-
       <b>CNIC Number :</b>
-
       ${key}
-
     </div>
 
-
     <div class="result-item">
-
       <b>Name :</b>
-
       ${record.name}
-
     </div>
 
-
     <div class="result-item">
-
       <b>Father/Husband Name :</b>
-
       ${record.father}
-
     </div>
 
-
     <div class="result-item">
-
       <b>City / Address :</b>
-
       ${record.address}
-
     </div>
 
-
     <div class="result-item">
-
       <b>License Number :</b>
-
       ${record.licence}
-
     </div>
 
-
     <div class="result-item">
-
       <b>DOB :</b>
-
       ${record.dob}
-
     </div>
 
-
     <div class="result-item">
-
       <b>Blood Group :</b>
-
       ${record.bloodGroup}
-
     </div>
 
-
     <div class="result-item">
-
       <b>Category :</b>
-
       ${record.category}
-
     </div>
 
-
     <div class="result-item">
-
       <b>Issue Date :</b>
-
       ${record.issueDate}
-
     </div>
 
-
     <div class="result-item">
-
       <b>Expiry Date :</b>
-
       ${record.expiryDate}
-
     </div>
 
   `;
 
 }
 
-
-/* =====================================================
-   ENTER KEY SEARCH
-===================================================== */
+/* ENTER */
 
 document
 .getElementById("lic")
@@ -1481,54 +985,37 @@ document
   "keydown",
   function(event){
 
-    if(event.key === "Enter"){
-
+    if(event.key==="Enter"){
       searchRecord();
-
     }
 
   }
 );
 
-
-/* =====================================================
+/* =========================
    SLIDER
-===================================================== */
+========================= */
 
-let slideIndex = 0;
+let slideIndex=0;
 
-
-const slides =
+const slides=
   document.querySelectorAll(".slide");
-
 
 function showSlide(){
 
-  slides.forEach(
-    function(slide){
+  slides.forEach(function(slide){
 
-      slide
-      .classList
-      .remove("active");
+    slide.classList.remove("active");
 
-    }
-  );
+  });
 
-
-  if(slideIndex >= slides.length){
-
-    slideIndex = 0;
-
+  if(slideIndex>=slides.length){
+    slideIndex=0;
   }
 
-
-  if(slideIndex < 0){
-
-    slideIndex =
-      slides.length - 1;
-
+  if(slideIndex<0){
+    slideIndex=slides.length-1;
   }
-
 
   slides[slideIndex]
   .classList
@@ -1536,61 +1023,48 @@ function showSlide(){
 
 }
 
-
 function changeSlide(number){
 
-  slideIndex += number;
+  slideIndex+=number;
 
   showSlide();
 
 }
 
+setInterval(function(){
 
-setInterval(
-  function(){
+  slideIndex++;
 
-    slideIndex++;
+  showSlide();
 
-    showSlide();
+},4000);
 
-  },
+/* =========================
+   FADE UP
+========================= */
 
-  4000
-);
-
-
-/* =====================================================
-   FADE-UP / SCROLL REVEAL
-===================================================== */
-
-const cards =
+const cards=
   document.querySelectorAll(".card");
 
-
-const observer =
+const observer=
   new IntersectionObserver(
 
     function(entries){
 
-      entries.forEach(
-        function(entry){
+      entries.forEach(function(entry){
 
-          if(entry.isIntersecting){
+        if(entry.isIntersecting){
 
-            entry.target
-            .classList
-            .add("show");
+          entry.target
+          .classList
+          .add("show");
 
-
-            observer
-            .unobserve(
-              entry.target
-            );
-
-          }
+          observer
+          .unobserve(entry.target);
 
         }
-      );
+
+      });
 
     },
 
@@ -1600,19 +1074,15 @@ const observer =
 
   );
 
+cards.forEach(function(card){
 
-cards.forEach(
-  function(card){
+  observer.observe(card);
 
-    observer.observe(card);
+});
 
-  }
-);
-
-
-/* =====================================================
-   SCROLL TOP
-===================================================== */
+/* =========================
+   TOP
+========================= */
 
 function goTop(){
 
@@ -1627,7 +1097,6 @@ function goTop(){
 }
 
 </script>
-
 
 </body>
 </html>
