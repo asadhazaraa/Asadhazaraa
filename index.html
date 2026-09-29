@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Verification Services</title>
+<title>KP Hazara License Verification Portal</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -20,24 +25,137 @@ html{
 
 body{
   font-family:Roboto,Arial,sans-serif;
-  background:#eeeeee;
+  background:#ffffff;
+  color:#222;
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* =====================================================
+   MAIN TOP HEADER
+===================================================== */
 
-.header{
+.main-header{
   width:100%;
-  height:139px;
-  padding:22px;
+  height:115px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 10%;
+
+  background:#ffffff;
+}
+
+.main-logo{
+  width:80px;
+  height:80px;
+  object-fit:contain;
+}
+
+.menu{
+  font-size:36px;
+  color:#111;
+  cursor:pointer;
+}
+
+
+/* =====================================================
+   SEARCH / HERO
+===================================================== */
+
+.hero{
+  position:relative;
+
+  width:100%;
+  min-height:400px;
+
+  padding:50px 13% 45px;
+
   background:#98a5c2;
+
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-45%);
+
+  background:
+    url("IMG_0957.jpeg")
+    center center / contain
+    no-repeat;
+
+  opacity:.05;
+
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  max-width:1050px;
+
+  margin:0 auto;
+}
+
+.hero-title{
+  margin-bottom:45px;
+
+  text-align:center;
+
+  color:#ad151a;
+
+  font-family:Georgia,serif;
+
+  font-size:35px;
+  font-weight:700;
+}
+
+.search-box label{
+  display:block;
+
+  margin-bottom:10px;
+
+  color:#d90000;
+
+  font-size:17px;
+}
+
+.search-box input{
+  display:block;
+
+  width:100%;
+  height:52px;
+
+  padding:0 20px;
+
+  background:#fff;
+
+  border:1px solid #ddd;
+  border-radius:30px;
+
+  outline:none;
+
+  font-size:16px;
 }
 
 .submit{
   width:88px;
   height:38px;
+
+  margin-top:35px;
 
   background:#dc3232;
   color:#fff;
@@ -47,26 +165,87 @@ body{
 
   font-size:16px;
 
-  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.25);
 
   cursor:pointer;
 }
 
 
-/* =========================
-   STRIP
-========================= */
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+  display:none;
+
+  width:100%;
+  max-width:550px;
+
+  margin-top:30px;
+
+  background:#fff;
+
+  border-radius:8px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,.18);
+}
+
+.result-item{
+  padding:15px 18px;
+
+  border-bottom:1px solid #ddd;
+
+  color:#666;
+
+  font-size:16px;
+}
+
+.result-item:last-child{
+  border-bottom:0;
+}
+
+.result-item b{
+  display:block;
+
+  margin-bottom:5px;
+
+  color:#111;
+}
+
+.not-found{
+  padding:20px;
+
+  color:#b71919;
+
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   SMALL STRIP
+===================================================== */
 
 .strip{
   width:100%;
   height:22px;
+
   background:#f1f4f8;
 }
 
 
-/* =========================
-   CARDS CONTAINER
-========================= */
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services{
+  width:100%;
+
+  background:#eeeeee;
+}
 
 .cards{
   width:100%;
@@ -75,17 +254,16 @@ body{
 
   display:flex;
   flex-direction:column;
+
   align-items:center;
 
   gap:22px;
-
-  background:#eeeeee;
 }
 
 
-/* =========================
-   COMMON CARD
-========================= */
+/* =====================================================
+   CARD
+===================================================== */
 
 .card{
   width:378px;
@@ -105,13 +283,17 @@ body{
     0 2px 10px rgba(80,110,140,.35);
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   overflow:hidden;
 
   opacity:0;
+
   transform:translateY(35px);
 
   transition:
@@ -120,16 +302,16 @@ body{
 }
 
 
-/* =========================
-   EXACT CARD HEIGHTS
-========================= */
+/* =====================================================
+   EXACT SCREENSHOT CARD HEIGHTS
+===================================================== */
 
-/* Driving */
+/* Driving License */
 .card:nth-child(1){
   height:184px;
 }
 
-/* Arms */
+/* Arms License */
 .card:nth-child(2){
   height:187px;
 }
@@ -140,12 +322,13 @@ body{
 }
 
 
-/* =========================
-   FADE-UP
-========================= */
+/* =====================================================
+   CARD ANIMATION
+===================================================== */
 
 .card.show{
   opacity:1;
+
   transform:translateY(0);
 }
 
@@ -158,9 +341,9 @@ body{
 }
 
 
-/* =========================
-   LOGOS
-========================= */
+/* =====================================================
+   CARD LOGOS
+===================================================== */
 
 .logo{
   display:block;
@@ -171,30 +354,30 @@ body{
 }
 
 
-/* Traffic Police */
+/* Traffic Police logo = 88 x 88 */
 .card:nth-child(1) .logo{
   width:88px;
   height:88px;
 }
 
 
-/* KPK Police */
+/* KPK Police logo = 82 x 82 */
 .card:nth-child(2) .logo{
   width:82px;
   height:82px;
 }
 
 
-/* Dastak */
+/* Dastak logo = 80 x 80 */
 .card:nth-child(3) .logo{
   width:80px;
   height:80px;
 }
 
 
-/* =========================
+/* =====================================================
    CARD TEXT
-========================= */
+===================================================== */
 
 .card h3{
   color:#a80f14;
@@ -206,98 +389,508 @@ body{
 }
 
 .card p{
+  margin-top:8px;
+
   color:#777;
 
   font-size:15px;
-
-  margin-top:8px;
 }
 
 
-/* =========================
-   ABOUT BAR
-========================= */
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
 
-.about{
+.about-section{
+  width:100%;
+
+  padding:0 3% 35px;
+
+  background:#1287c4;
+
+  color:#e5f3f9;
+}
+
+
+/* About heading top bar */
+.about-heading{
   width:100%;
   height:65px;
 
-  padding:0 23px;
-
   display:flex;
-  align-items:center;
 
-  background:#1287c4;
+  align-items:center;
 }
 
-.about h2{
+.about-heading h2{
   color:#a80f14;
 
-  font-size:30px;
-
   font-family:Georgia,serif;
+
+  font-size:30px;
 
   font-weight:800;
 }
 
 
-/* =========================
-   SCROLL-UP BUTTON
-========================= */
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
 
-.top{
+.about-grid{
+  width:100%;
+
+  max-width:1250px;
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1.8fr;
+
+  gap:35px;
+
+  align-items:start;
+}
+
+.about-column h2{
+  margin-bottom:20px;
+
+  color:#a80f14;
+
+  font-family:Georgia,serif;
+
+  font-size:28px;
+}
+
+.about-column p{
+  color:#e5f3f9;
+
+  font-size:15px;
+
+  line-height:1.45;
+}
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.slider{
+  position:relative;
+
+  width:100%;
+
+  height:340px;
+
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:0;
+
+  transform:scale(1.03);
+
+  transition:
+    opacity .7s ease,
+    transform 1s ease;
+}
+
+.slide.active{
+  opacity:1;
+
+  transform:scale(1);
+}
+
+.prev,
+.next{
+  position:absolute;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+  z-index:10;
+
+  width:42px;
+  height:58px;
+
+  border:0;
+
+  background:rgba(0,0,0,.25);
+
+  color:#fff;
+
+  font-size:32px;
+
+  cursor:pointer;
+}
+
+.prev{
+  left:0;
+}
+
+.next{
+  right:0;
+}
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+.review{
+  width:100%;
+
+  padding:40px 20px 50px;
+
+  background:#fff;
+
+  text-align:center;
+}
+
+.review h2{
+  margin-bottom:25px;
+
+  color:#253046;
+
+  font-size:25px;
+}
+
+.socials{
+  display:flex;
+
+  justify-content:center;
+
+  gap:25px;
+}
+
+.social{
+  width:50px;
+  height:50px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#b71919;
+
+  color:#fff;
+
+  font-size:18px;
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+  width:100%;
+
+  padding:25px 15px;
+
+  background:#fff;
+
+  border-top:1px solid #4fa768;
+
+  text-align:center;
+
+  color:#777;
+
+  font-size:14px;
+}
+
+
+/* =====================================================
+   SCROLL UP BUTTON
+===================================================== */
+
+.top-btn{
   position:fixed;
 
   right:30px;
   bottom:30px;
 
+  z-index:100;
+
   width:35px;
   height:35px;
-
-  border:0;
 
   background:#00008b;
 
   color:#fff;
 
+  border:0;
+
   font-size:20px;
 
   cursor:pointer;
-
-  z-index:100;
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =====================================================
+   MOBILE — SCREENSHOT BASED ON 400px WIDTH
+===================================================== */
 
-@media(max-width:399px){
+@media(max-width:600px){
+
+  /* TOP */
+
+  .main-header{
+    height:88px;
+
+    padding:0 20px;
+  }
+
+  .main-logo{
+    width:68px;
+    height:68px;
+  }
+
+  .menu{
+    font-size:30px;
+  }
+
+
+  /* HERO */
+
+  .hero{
+    min-height:400px;
+
+    padding:
+      35px
+      22px
+      35px;
+  }
+
+  .hero::before{
+    width:220px;
+    height:220px;
+  }
+
+  .hero-title{
+    margin-bottom:38px;
+
+    font-size:24px;
+  }
+
+  .search-box label{
+    font-size:16px;
+  }
+
+  .search-box input{
+    height:48px;
+
+    font-size:15px;
+  }
+
+
+  /* EXACT SUBMIT SIZE */
+
+  .submit{
+    width:88px;
+    height:38px;
+
+    margin-top:30px;
+
+    font-size:16px;
+  }
+
+
+  /* EXACT STRIP */
+
+  .strip{
+    height:22px;
+  }
+
+
+  /* ==============================================
+     CARDS — SCREENSHOT EXACT MOBILE MEASUREMENTS
+  ============================================== */
 
   .cards{
-    padding-left:11px;
-    padding-right:11px;
+    padding:
+      11px
+      11px
+      12px;
+
+    gap:22px;
   }
 
+
   .card{
-    width:100%;
+    width:378px;
+
+    max-width:100%;
+
+    border-radius:22px;
+  }
+
+
+  /* FIRST = 378 × 184 */
+
+  .card:nth-child(1){
+    height:184px;
+  }
+
+
+  /* SECOND = 378 × 187 */
+
+  .card:nth-child(2){
+    height:187px;
+  }
+
+
+  /* THIRD = 378 × 176 */
+
+  .card:nth-child(3){
+    height:176px;
+  }
+
+
+  /* LOGO 1 */
+
+  .card:nth-child(1) .logo{
+    width:88px;
+    height:88px;
+  }
+
+
+  /* LOGO 2 */
+
+  .card:nth-child(2) .logo{
+    width:82px;
+    height:82px;
+  }
+
+
+  /* LOGO 3 */
+
+  .card:nth-child(3) .logo{
+    width:80px;
+    height:80px;
+  }
+
+
+  /* TITLE */
+
+  .card h3{
+    font-size:18px;
+  }
+
+
+  /* SUBTITLE */
+
+  .card p{
+    margin-top:8px;
+
+    font-size:15px;
+  }
+
+
+  /* ==============================================
+     ABOUT
+  ============================================== */
+
+  .about-section{
+    padding:
+      0
+      23px
+      35px;
+  }
+
+
+  /* EXACT 65px ABOUT BAR */
+
+  .about-heading{
+    height:65px;
+  }
+
+  .about-heading h2{
+    font-size:30px;
+  }
+
+
+  .about-grid{
+    grid-template-columns:1fr;
+
+    gap:35px;
+  }
+
+  .about-column h2{
+    font-size:28px;
+  }
+
+  .about-column p{
+    font-size:15px;
+
+    line-height:1.45;
+  }
+
+
+  /* SLIDER */
+
+  .slider{
+    height:250px;
+  }
+
+
+  /* RESULT */
+
+  .result{
+    max-width:100%;
+  }
+
+
+  /* EXACT 35 × 35 SCROLL BUTTON */
+
+  .top-btn{
+    right:30px;
+    bottom:30px;
+
+    width:35px;
+    height:35px;
+
+    font-size:20px;
   }
 
 }
 
 
-/* =========================
-   TABLET / DESKTOP
-========================= */
+/* =====================================================
+   TABLET / DESKTOP CARDS
+===================================================== */
 
 @media(min-width:700px){
 
   .cards{
+    max-width:1150px;
+
+    margin:0 auto;
+
     padding:25px;
 
     flex-direction:row;
 
     justify-content:center;
+
     align-items:center;
 
     gap:22px;
@@ -305,21 +898,24 @@ body{
 
   .card{
     width:31%;
+
     max-width:378px;
   }
 
 }
 
 
-/* =========================
-   ACCESSIBILITY
-========================= */
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
 
 @media(prefers-reduced-motion:reduce){
 
   .card{
     opacity:1;
+
     transform:none;
+
     transition:none;
   }
 
@@ -329,138 +925,357 @@ body{
 
 </head>
 
+
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- =====================================================
+     MAIN HEADER
+===================================================== -->
 
-<div class="header">
+<header class="main-header">
 
-  <button
-    class="submit"
-    type="button"
+  <img
+    src="IMG_0957.jpeg"
+    class="main-logo"
+    alt="Logo"
   >
-    Submit
-  </button>
 
-</div>
+  <div class="menu">
+    ☰
+  </div>
+
+</header>
 
 
-<!-- =========================
+<!-- =====================================================
+     SEARCH HERO
+===================================================== -->
+
+<section
+  class="hero"
+  id="licenseSearch"
+>
+
+  <div class="hero-inner">
+
+    <h1 class="hero-title">
+      KP Hazara License Verification Portal
+    </h1>
+
+
+    <div class="search-box">
+
+      <label for="lic">
+        CNIC Number *
+      </label>
+
+
+      <input
+        id="lic"
+        type="text"
+        inputmode="numeric"
+        maxlength="13"
+        autocomplete="off"
+        placeholder="Type CNIC Number without dash"
+      >
+
+
+      <button
+        class="submit"
+        type="button"
+        onclick="searchRecord()"
+      >
+        Submit
+      </button>
+
+
+      <div
+        id="result"
+        class="result"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      STRIP
-========================= -->
+===================================================== -->
 
 <div class="strip"></div>
 
 
-<!-- =========================
+<!-- =====================================================
      VERIFICATION CARDS
-========================= -->
+===================================================== -->
 
-<div class="cards">
+<section class="services">
+
+  <div class="cards">
 
 
-  <!-- CARD 1 -->
+    <!-- ======================
+         CARD 1
+    ======================= -->
 
-  <a
-    class="card"
-    href="#"
-  >
-
-    <img
-      class="logo"
-      src="traffic-police.png"
-      alt="Traffic Police"
+    <a
+      class="card"
+      href="#licenseSearch"
     >
 
-    <h3>
-      Driving License Verification
-    </h3>
+      <img
+        class="logo"
+        src="traffic-police.png"
+        alt="Traffic Police"
+      >
 
-    <p>
-      Directorate of Transport
-    </p>
+      <h3>
+        Driving License Verification
+      </h3>
 
-  </a>
+      <p>
+        Directorate of Transport
+      </p>
+
+    </a>
 
 
-  <!-- CARD 2 -->
+    <!-- ======================
+         CARD 2
+    ======================= -->
 
-  <a
-    class="card"
-    href="#"
-  >
-
-    <img
-      class="logo"
-      src="kpk-police.png"
-      alt="KPK Police"
+    <a
+      class="card"
+      href="#"
     >
 
-    <h3>
-      Arms License Verification
-    </h3>
+      <img
+        class="logo"
+        src="kpk-police.png"
+        alt="KPK Police"
+      >
 
-    <p>
-      Home Department
-    </p>
+      <h3>
+        Arms License Verification
+      </h3>
 
-  </a>
+      <p>
+        Home Department
+      </p>
+
+    </a>
 
 
-  <!-- CARD 3 -->
+    <!-- ======================
+         CARD 3
+    ======================= -->
 
-  <a
-    class="card"
-    href="#"
-  >
-
-    <img
-      class="logo"
-      src="dastak.png"
-      alt="Dastak"
+    <a
+      class="card"
+      href="#"
     >
 
-    <h3>
-      Dastak Digital Arms License
-    </h3>
+      <img
+        class="logo"
+        src="dastak.png"
+        alt="Dastak"
+      >
 
-    <p>
-      Home Department
-    </p>
+      <h3>
+        Dastak Digital Arms License
+      </h3>
 
-  </a>
+      <p>
+        Home Department
+      </p>
+
+    </a>
 
 
-</div>
+  </div>
+
+</section>
 
 
-<!-- =========================
-     ABOUT US
-========================= -->
+<!-- =====================================================
+     ABOUT SECTION
+===================================================== -->
 
-<div class="about">
+<section class="about-section">
+
+
+  <!-- EXACT ABOUT BAR -->
+
+  <div class="about-heading">
+
+    <h2>
+      About Us
+    </h2>
+
+  </div>
+
+
+  <div class="about-grid">
+
+
+    <!-- ABOUT -->
+
+    <div class="about-column">
+
+      <p>
+        Driving License Issuance Management System
+        (DLIMS) Phase-II automates the processes for
+        driving license issuance, renewal and upgrades.
+        These activities are carried out throughout the
+        KP Hazara. This system provides quick processing
+        service to public and up to date statistics to
+        the authorities by using state of the art
+        technology and equipment. The system redefines
+        the issuance process of all types of licenses
+        by using a centralized network.
+      </p>
+
+    </div>
+
+
+    <!-- FEATURES -->
+
+    <div class="about-column">
+
+      <h2>
+        Key Features
+      </h2>
+
+      <p>
+        Centralized Issuance and Management of Driving Licenses
+
+        <br><br>
+
+        Centralized Database of Licensing System of whole KP Hazara
+
+        <br><br>
+
+        Centralized Driving License Printing Facility
+
+        <br><br>
+
+        Delivery of Issued Licenses through courier and basing
+        on that verification of the Applicant can be made easy
+      </p>
+
+    </div>
+
+
+    <!-- SLIDER -->
+
+    <div>
+
+      <div class="slider">
+
+
+        <img
+          src="IMG_0944.jpeg"
+          class="slide active"
+          alt="Traffic"
+        >
+
+
+        <img
+          src="IMG_0945.jpeg"
+          class="slide"
+          alt="Traffic"
+        >
+
+
+        <img
+          src="IMG_0943.jpeg"
+          class="slide"
+          alt="Traffic"
+        >
+
+
+        <button
+          class="prev"
+          type="button"
+          onclick="changeSlide(-1)"
+        >
+          ‹
+        </button>
+
+
+        <button
+          class="next"
+          type="button"
+          onclick="changeSlide(1)"
+        >
+          ›
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     REVIEW
+===================================================== -->
+
+<section class="review">
 
   <h2>
-    About Us
+    Review Us On
   </h2>
 
-</div>
+
+  <div class="socials">
+
+    <div class="social">
+      f
+    </div>
+
+    <div class="social">
+      X
+    </div>
+
+    <div class="social">
+      ◎
+    </div>
+
+  </div>
+
+</section>
 
 
-<!-- =========================
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  Copyright © 2026 KP Hazara DLIMS |
+  Verify Your License
+
+</footer>
+
+
+<!-- =====================================================
      SCROLL UP
-========================= -->
+===================================================== -->
 
 <button
-  class="top"
+  class="top-btn"
   type="button"
-  onclick="window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  })"
+  onclick="goTop()"
 >
   &#8963;
 </button>
@@ -468,9 +1283,285 @@ body{
 
 <script>
 
-/* =========================
+/* =====================================================
+   RECORDS
+===================================================== */
+
+/*
+  Apne records yahan add karein.
+
+  Example:
+
+  "1111111111111":{
+    name:"Example Name",
+    father:"Example Father",
+    address:"Example Address",
+    licence:"ABC-001",
+    dob:"01-01-2000",
+    bloodGroup:"B+",
+    category:"M.CYCLE + MOTOR CAR",
+    issueDate:"01-01-2025",
+    expiryDate:"01-01-2030"
+  }
+
+*/
+
+const records = {
+
+  "1111111111111":{
+
+    name:"Example Name",
+
+    father:"Example Father",
+
+    address:"Example Address",
+
+    licence:"ABC-001",
+
+    dob:"01-01-2000",
+
+    bloodGroup:"B+",
+
+    category:"M.CYCLE + MOTOR CAR",
+
+    issueDate:"01-01-2025",
+
+    expiryDate:"01-01-2030"
+
+  }
+
+};
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchRecord(){
+
+  const input =
+    document.getElementById("lic");
+
+
+  const result =
+    document.getElementById("result");
+
+
+  const key =
+    input.value
+    .replace(/\D/g,"")
+    .trim();
+
+
+  const record =
+    records[key];
+
+
+  result.style.display =
+    "block";
+
+
+  if(!record){
+
+    result.innerHTML = `
+
+      <div class="not-found">
+        Record not found
+      </div>
+
+    `;
+
+    return;
+  }
+
+
+  result.innerHTML = `
+
+    <div class="result-item">
+
+      <b>CNIC Number :</b>
+
+      ${key}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>Name :</b>
+
+      ${record.name}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>Father/Husband Name :</b>
+
+      ${record.father}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>City / Address :</b>
+
+      ${record.address}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>License Number :</b>
+
+      ${record.licence}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>DOB :</b>
+
+      ${record.dob}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>Blood Group :</b>
+
+      ${record.bloodGroup}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>Category :</b>
+
+      ${record.category}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>Issue Date :</b>
+
+      ${record.issueDate}
+
+    </div>
+
+
+    <div class="result-item">
+
+      <b>Expiry Date :</b>
+
+      ${record.expiryDate}
+
+    </div>
+
+  `;
+
+}
+
+
+/* =====================================================
+   ENTER KEY SEARCH
+===================================================== */
+
+document
+.getElementById("lic")
+.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      searchRecord();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+let slideIndex = 0;
+
+
+const slides =
+  document.querySelectorAll(".slide");
+
+
+function showSlide(){
+
+  slides.forEach(
+    function(slide){
+
+      slide
+      .classList
+      .remove("active");
+
+    }
+  );
+
+
+  if(slideIndex >= slides.length){
+
+    slideIndex = 0;
+
+  }
+
+
+  if(slideIndex < 0){
+
+    slideIndex =
+      slides.length - 1;
+
+  }
+
+
+  slides[slideIndex]
+  .classList
+  .add("active");
+
+}
+
+
+function changeSlide(number){
+
+  slideIndex += number;
+
+  showSlide();
+
+}
+
+
+setInterval(
+  function(){
+
+    slideIndex++;
+
+    showSlide();
+
+  },
+
+  4000
+);
+
+
+/* =====================================================
    FADE-UP / SCROLL REVEAL
-========================= */
+===================================================== */
 
 const cards =
   document.querySelectorAll(".card");
@@ -481,20 +1572,25 @@ const observer =
 
     function(entries){
 
-      entries.forEach(function(entry){
+      entries.forEach(
+        function(entry){
 
-        if(entry.isIntersecting){
+          if(entry.isIntersecting){
 
-          entry.target
+            entry.target
             .classList
             .add("show");
 
-          observer
-            .unobserve(entry.target);
+
+            observer
+            .unobserve(
+              entry.target
+            );
+
+          }
 
         }
-
-      });
+      );
 
     },
 
@@ -505,11 +1601,30 @@ const observer =
   );
 
 
-cards.forEach(function(card){
+cards.forEach(
+  function(card){
 
-  observer.observe(card);
+    observer.observe(card);
 
-});
+  }
+);
+
+
+/* =====================================================
+   SCROLL TOP
+===================================================== */
+
+function goTop(){
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
+
+}
 
 </script>
 
