@@ -1,14 +1,9 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1"
->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>KP Hazara License Verification Portal</title>
 
@@ -28,9 +23,8 @@ html{
 
 body{
   margin:0;
-  padding:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:#ffffff;
+  background:#fff;
   color:#222;
 }
 
@@ -41,31 +35,27 @@ body{
 
 .top{
   width:100%;
-  height:105px;
+  height:120px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 6%;
+  padding:0 10%;
 
   background:#fff;
 }
 
 .top-logo{
-  width:82px;
-  height:82px;
-
+  width:78px;
+  height:78px;
   object-fit:contain;
-
-  display:block;
 }
 
 .menu{
-  font-size:34px;
-  line-height:1;
+  font-size:38px;
   font-weight:bold;
-  color:#333;
+  color:#111;
   cursor:pointer;
 }
 
@@ -77,37 +67,37 @@ body{
 .hero{
   position:relative;
 
-  width:100%;
-  min-height:390px;
+  min-height:420px;
 
-  padding:40px 7% 45px;
+  padding:60px 13% 55px;
 
-  background:#9eacc9;
+  background:#a2abc8;
 
   overflow:hidden;
 }
 
 
-/* FADED BACKGROUND LOGO EFFECT */
+/* faded logo */
 
 .hero::before{
   content:"";
 
   position:absolute;
 
-  width:260px;
-  height:260px;
+  width:330px;
+  height:330px;
 
   left:50%;
   top:50%;
 
-  transform:translate(-50%,-45%);
+  transform:translate(-50%,-43%);
 
-  background:url("IMG_0957.jpeg")
-             center/contain
-             no-repeat;
+  background:
+    url("IMG_0957.jpeg")
+    center/contain
+    no-repeat;
 
-  opacity:.07;
+  opacity:.045;
 
   pointer-events:none;
 }
@@ -118,84 +108,83 @@ body{
   z-index:2;
 
   width:100%;
-  max-width:1100px;
+  max-width:1050px;
 
   margin:auto;
 }
 
 
 .hero h1{
-  margin:0 0 45px;
+  margin:0 0 52px;
 
   text-align:center;
 
   font-family:Georgia,serif;
 
-  font-size:32px;
+  font-size:36px;
 
-  color:#b91c1c;
+  color:#bd1b1b;
 
   text-shadow:
-    0 2px 2px rgba(0,0,0,.15);
+    0 2px 2px rgba(0,0,0,.12);
 }
 
 
 /* =========================
-   SEARCH BOX
+   SEARCH FORM
 ========================= */
+
+.search-box{
+  width:100%;
+}
+
 
 .search-box label{
   display:block;
 
   margin-bottom:10px;
 
-  color:#c91d1d;
+  color:red;
 
-  font-size:17px;
+  font-size:18px;
 }
 
 
 .search-box input{
-  display:block;
-
   width:100%;
-  height:52px;
+  height:53px;
 
   padding:0 20px;
 
   border:1px solid #ddd;
 
-  border-radius:28px;
-
-  outline:none;
+  border-radius:30px;
 
   background:#fff;
 
-  font-size:16px;
+  outline:none;
 
-  color:#333;
+  color:#667085;
+
+  font-size:17px;
 }
 
 
 .search-box input:focus{
-  border-color:#d92323;
-
-  box-shadow:
-    0 0 0 2px
-    rgba(217,35,35,.08);
+  border-color:#e52f34;
 }
 
 
 .submit-btn{
-  margin-top:30px;
+  margin-top:38px;
 
-  padding:11px 22px;
+  padding:12px 23px;
 
   border:2px solid #fff;
 
   border-radius:9px;
 
-  background:#e52d32;
+  background:#e83237;
 
   color:#fff;
 
@@ -204,8 +193,7 @@ body{
   cursor:pointer;
 
   box-shadow:
-    0 2px 4px
-    rgba(0,0,0,.25);
+    0 2px 3px rgba(0,0,0,.2);
 }
 
 
@@ -215,7 +203,7 @@ body{
 
 
 /* =========================
-   RESULT
+   SEARCH RESULT
 ========================= */
 
 .result{
@@ -228,13 +216,12 @@ body{
 
   overflow:hidden;
 
-  border-radius:8px;
-
   background:#f7f8f8;
 
+  border-radius:6px;
+
   box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.15);
+    0 4px 15px rgba(0,0,0,.15);
 }
 
 
@@ -266,8 +253,6 @@ body{
   color:#111;
 
   font-size:16px;
-
-  font-weight:700;
 }
 
 
@@ -283,42 +268,40 @@ body{
 
 
 /* =========================
-   WHITE SPACE
+   WHITE GAP
 ========================= */
 
 .white-gap{
-  width:100%;
-  height:38px;
-
+  height:50px;
   background:#fff;
 }
 
 
-/* ===================================
-   3 CARDS - SCREENSHOT STYLE
-=================================== */
+/* =========================================
+   3 CARDS
+========================================= */
 
 .services{
   width:100%;
 
-  padding:
-    20px 18px 25px;
+  padding:15px 10%;
 
-  background:#eef3f5;
+  background:#eef1f2;
 }
 
 
 .cards{
   width:100%;
-  max-width:1080px;
+  max-width:1100px;
 
-  margin:0 auto;
+  margin:auto;
 
-  display:flex;
+  display:grid;
 
-  flex-direction:column;
+  grid-template-columns:
+    repeat(3,1fr);
 
-  gap:38px;
+  gap:25px;
 }
 
 
@@ -326,28 +309,38 @@ body{
 
 .card{
   width:100%;
-  height:320px;
+
+  height:220px;
 
   display:flex;
 
   align-items:center;
   justify-content:center;
 
-  background:#fff;
-
-  border-radius:38px;
-
   overflow:hidden;
 
-  cursor:pointer;
+  background:#fff;
+
+  border-radius:25px;
 
   box-shadow:
-    0 3px 12px rgba(79,108,122,.28),
-    0 10px 25px rgba(79,108,122,.20);
+    0 3px 10px rgba(68,95,105,.25),
+    0 8px 18px rgba(68,95,105,.18);
+
+  cursor:pointer;
 
   transition:
     transform .2s ease,
     box-shadow .2s ease;
+}
+
+
+.card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 6px 15px rgba(68,95,105,.30),
+    0 10px 22px rgba(68,95,105,.20);
 }
 
 
@@ -356,7 +349,7 @@ body{
 }
 
 
-/* COMPLETE IMAGE INSIDE CARD */
+/* FULL IMAGE */
 
 .card-picture{
   display:block;
@@ -367,24 +360,21 @@ body{
   object-fit:contain;
 
   object-position:center;
-
-  border-radius:38px;
 }
 
 
 /* =========================
-   ABOUT AREA
+   ABOUT
 ========================= */
 
 .about{
   width:100%;
 
-  padding:
-    30px 4% 35px;
+  padding:28px 2.5% 35px;
 
-  background:#188fc7;
+  background:#168fc8;
 
-  color:#e2f2f8;
+  color:#dceff7;
 }
 
 
@@ -397,34 +387,34 @@ body{
   display:grid;
 
   grid-template-columns:
-    1fr 1fr 1.7fr;
+    1fr 1fr 1.8fr;
 
   gap:35px;
+
+  align-items:start;
 }
 
 
 .about h2{
-  margin:
-    0 0 20px;
+  margin:0 0 25px;
 
-  color:#b51c1c;
+  color:#b51b1b;
 
   font-family:Georgia,serif;
 
   font-size:31px;
 
   text-shadow:
-    0 2px 2px
-    rgba(0,0,0,.25);
+    0 2px 2px rgba(0,0,0,.25);
 }
 
 
 .about p{
   margin:0;
 
-  font-size:15px;
+  font-size:16px;
 
-  line-height:1.4;
+  line-height:1.25;
 }
 
 
@@ -436,11 +426,11 @@ body{
   position:relative;
 
   width:100%;
-  height:330px;
+  height:350px;
 
   overflow:hidden;
 
-  background:#147ca9;
+  background:#147da9;
 }
 
 
@@ -481,10 +471,8 @@ body{
 
   z-index:5;
 
-  width:42px;
-  height:55px;
-
-  padding:0;
+  width:43px;
+  height:60px;
 
   border:0;
 
@@ -493,7 +481,7 @@ body{
 
   color:#fff;
 
-  font-size:31px;
+  font-size:35px;
 
   cursor:pointer;
 }
@@ -514,10 +502,7 @@ body{
 ========================= */
 
 .review{
-  width:100%;
-
-  padding:
-    35px 20px 50px;
+  padding:40px 20px 55px;
 
   text-align:center;
 
@@ -526,8 +511,7 @@ body{
 
 
 .review h2{
-  margin:
-    0 0 25px;
+  margin:0 0 25px;
 
   color:#253046;
 }
@@ -536,16 +520,15 @@ body{
 .social-icons{
   display:flex;
 
-  align-items:center;
   justify-content:center;
 
-  gap:25px;
+  gap:28px;
 }
 
 
 .social-icon{
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
 
   display:flex;
 
@@ -569,21 +552,18 @@ body{
 ========================= */
 
 .footer{
-  width:100%;
-
-  padding:
-    25px 15px;
+  padding:28px 15px;
 
   border-top:
-    1px solid #53a76b;
-
-  text-align:center;
+    1px solid #4fa768;
 
   background:#fff;
 
+  text-align:center;
+
   color:#777;
 
-  font-size:13px;
+  font-size:14px;
 }
 
 
@@ -594,18 +574,13 @@ body{
 .back-top{
   position:fixed;
 
-  right:22px;
-  bottom:20px;
+  right:25px;
+  bottom:22px;
 
-  z-index:20;
+  z-index:50;
 
   width:55px;
   height:55px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
 
   border:0;
 
@@ -615,19 +590,87 @@ body{
 
   color:#fff;
 
-  font-size:35px;
+  font-size:34px;
 
   cursor:pointer;
 
   box-shadow:
-    0 2px 6px
-    rgba(0,0,0,.2);
+    0 2px 7px rgba(0,0,0,.25);
 }
 
 
-/* ===================================
-   MOBILE - LIKE SCREENSHOT
-=================================== */
+/* =========================================
+   IPAD / TABLET
+========================================= */
+
+@media(max-width:1100px){
+
+  .top{
+    padding:0 10%;
+  }
+
+  .top-logo{
+    width:72px;
+    height:72px;
+  }
+
+
+  .hero{
+    padding:
+      60px 13% 55px;
+  }
+
+
+  .services{
+    padding:
+      14px 10%;
+  }
+
+
+  /* IMPORTANT:
+     KEEP ALL 3 CARDS IN ONE ROW ON IPAD */
+
+  .cards{
+    grid-template-columns:
+      repeat(3,1fr);
+
+    gap:25px;
+  }
+
+
+  .card{
+    height:220px;
+  }
+
+
+  .about-row{
+    grid-template-columns:
+      1fr 1fr 1.8fr;
+
+    gap:30px;
+  }
+
+
+  .about h2{
+    font-size:29px;
+  }
+
+
+  .about p{
+    font-size:15px;
+  }
+
+
+  .slider{
+    height:350px;
+  }
+
+}
+
+
+/* =========================================
+   PHONE ONLY
+========================================= */
 
 @media(max-width:600px){
 
@@ -637,12 +680,9 @@ body{
   .top{
     height:90px;
 
-    padding:
-      0 20px;
+    padding:0 20px;
   }
 
-
-  /* BIGGER HEADER LOGO */
 
   .top-logo{
     width:72px;
@@ -651,7 +691,7 @@ body{
 
 
   .menu{
-    font-size:30px;
+    font-size:31px;
   }
 
 
@@ -696,56 +736,41 @@ body{
 
 
   .white-gap{
-    height:38px;
+    height:35px;
   }
 
 
-  /* ===================================
-     SCREENSHOT CARD DESIGN
-  =================================== */
+  /* =========================
+     PHONE CARDS
+  ========================= */
 
   .services{
     padding:
-      20px 18px 22px;
+      20px 18px;
   }
 
 
   .cards{
-    display:flex;
+    grid-template-columns:1fr;
 
-    flex-direction:column;
-
-    gap:38px;
+    gap:28px;
   }
 
 
   .card{
     width:100%;
 
-    height:320px;
+    height:300px;
 
-    border-radius:38px;
-
-    background:#fff;
-
-    box-shadow:
-      0 4px 13px
-      rgba(73,105,120,.30),
-      0 10px 24px
-      rgba(73,105,120,.18);
+    border-radius:35px;
   }
 
 
   .card-picture{
     width:100%;
-
     height:100%;
 
     object-fit:contain;
-
-    object-position:center;
-
-    border-radius:38px;
   }
 
 
@@ -758,8 +783,6 @@ body{
 
 
   .about-row{
-    display:grid;
-
     grid-template-columns:1fr;
 
     gap:35px;
@@ -767,8 +790,6 @@ body{
 
 
   .about h2{
-    margin-bottom:18px;
-
     font-size:30px;
   }
 
@@ -779,8 +800,6 @@ body{
     line-height:1.4;
   }
 
-
-  /* SLIDER */
 
   .slider{
     height:260px;
@@ -802,37 +821,14 @@ body{
   }
 
 
-  .result-item b{
-    font-size:16px;
-  }
-
-
-  /* BACK TOP */
+  /* BACK BUTTON */
 
   .back-top{
-    width:55px;
-    height:55px;
+    width:52px;
+    height:52px;
 
     right:18px;
     bottom:18px;
-  }
-
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media(max-width:380px){
-
-  .card{
-    height:285px;
-  }
-
-  .top-logo{
-    width:68px;
-    height:68px;
   }
 
 }
@@ -927,9 +923,9 @@ body{
 
 
 
-<!-- ===================================
-     THREE IMAGE CARDS
-=================================== -->
+<!-- =========================================
+     THREE CARDS
+========================================= -->
 
 <section class="services">
 
@@ -952,6 +948,7 @@ body{
     </div>
 
 
+
     <!-- CARD 2 -->
 
     <div class="card">
@@ -963,6 +960,7 @@ body{
       >
 
     </div>
+
 
 
     <!-- CARD 3 -->
@@ -993,11 +991,14 @@ body{
   <div class="about-row">
 
 
+    <!-- ABOUT US -->
+
     <div>
 
       <h2>
         About Us
       </h2>
+
 
       <p>
 
@@ -1018,11 +1019,14 @@ body{
 
 
 
+    <!-- KEY FEATURES -->
+
     <div>
 
       <h2>
         Key Features
       </h2>
+
 
       <p>
 
@@ -1150,7 +1154,9 @@ body{
 
 
 
-<!-- BACK TO TOP -->
+<!-- =========================
+     BACK TO TOP
+========================= -->
 
 <button
   class="back-top"
@@ -1166,9 +1172,9 @@ body{
 <script>
 
 
-/* ===================================
-   RECORD
-=================================== */
+/* =========================================
+   RECORDS
+========================================= */
 
 const records = {
 
@@ -1198,14 +1204,15 @@ const records = {
 
 
 
-/* ===================================
+/* =========================================
    SEARCH
-=================================== */
+========================================= */
 
 function searchRecord(){
 
   const input =
     document.getElementById("lic");
+
 
   const result =
     document.getElementById("result");
@@ -1341,7 +1348,7 @@ function searchRecord(){
 
 
 
-/* ENTER KEY */
+/* ENTER KEY SEARCH */
 
 document
 .getElementById("lic")
@@ -1360,7 +1367,9 @@ document
 
 
 
-/* FIRST CARD -> SEARCH */
+/* =========================================
+   FIRST CARD CLICK
+========================================= */
 
 function openSearch(){
 
@@ -1388,9 +1397,9 @@ function openSearch(){
 
 
 
-/* ===================================
+/* =========================================
    SLIDER
-=================================== */
+========================================= */
 
 let slideIndex = 0;
 
@@ -1434,6 +1443,7 @@ function showSlide(){
 }
 
 
+
 function changeSlide(number){
 
   slideIndex += number;
@@ -1441,6 +1451,7 @@ function changeSlide(number){
   showSlide();
 
 }
+
 
 
 setInterval(
@@ -1456,9 +1467,9 @@ setInterval(
 
 
 
-/* ===================================
+/* =========================================
    BACK TO TOP
-=================================== */
+========================================= */
 
 function goTop(){
 
@@ -1477,5 +1488,4 @@ function goTop(){
 
 
 </body>
-
 </html>
