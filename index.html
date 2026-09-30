@@ -26,7 +26,7 @@ body{
 }
 
 /* =========================
-   TOP HEADER
+   HEADER
 ========================= */
 
 .main-header{
@@ -47,14 +47,14 @@ body{
 }
 
 /* =========================
-   HAMBURGER MENU
+   MENU
 ========================= */
 
 .menu-wrap{
   position:relative;
 }
 
-.menu{
+.menu-btn{
   width:42px;
   height:42px;
 
@@ -62,66 +62,76 @@ body{
   align-items:center;
   justify-content:center;
 
-  padding:0;
+  background:transparent;
+  border:0;
+
+  color:#111;
 
   font-size:30px;
   line-height:1;
 
-  color:#111;
-
-  background:transparent;
-  border:0;
-
   cursor:pointer;
 }
 
-/* DROPDOWN */
+/* MENU BOX */
 
 .dropdown-menu{
-  display:none;
-
   position:absolute;
 
-  right:0;
   top:48px;
+  right:0;
 
   width:150px;
 
   background:#fff;
 
-  border-radius:6px;
+  border-radius:5px;
 
-  box-shadow:
-    0 5px 18px
-    rgba(0,0,0,.20);
+  box-shadow:0 5px 18px rgba(0,0,0,.22);
 
   overflow:hidden;
 
-  z-index:2000;
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(-8px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease;
+
+  z-index:9999;
 }
 
-.dropdown-menu.show-menu{
-  display:block;
+/* MENU OPEN */
+
+.dropdown-menu.open{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
 }
+
+/* ONLY HOME */
 
 .dropdown-menu a{
   display:block;
 
   width:100%;
 
-  padding:14px 18px;
-
-  color:#222;
+  padding:15px 18px;
 
   background:#fff;
 
-  text-decoration:none;
+  color:#222;
 
   font-size:16px;
+
+  text-decoration:none;
 }
 
 .dropdown-menu a:hover{
-  background:#f2f2f2;
+  background:#f3f3f3;
 }
 
 /* =========================
@@ -200,6 +210,7 @@ body{
   padding:0 20px;
 
   border:1px solid #ddd;
+
   border-radius:30px;
 
   background:#fff;
@@ -225,21 +236,20 @@ body{
 
   font-size:16px;
 
-  box-shadow:
-    0 2px 6px
-    rgba(0,0,0,.25);
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
 
   cursor:pointer;
 }
 
 /* =========================
-   RESULT
+   SEARCH RESULT
 ========================= */
 
 .result{
   display:none;
 
   width:100%;
+
   max-width:520px;
 
   margin-top:25px;
@@ -250,9 +260,7 @@ body{
 
   overflow:hidden;
 
-  box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.18);
+  box-shadow:0 4px 15px rgba(0,0,0,.18);
 }
 
 .result-item{
@@ -321,9 +329,7 @@ body{
   gap:15px;
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 .card{
   display:block;
@@ -351,19 +357,19 @@ body{
     transform .85s ease;
 }
 
-/* 1ST - LEFT */
+/* 1 - LEFT SIDE */
 
 .card:nth-child(1){
   transform:translateX(-120px);
 }
 
-/* 2ND - BOTTOM */
+/* 2 - BOTTOM */
 
 .card:nth-child(2){
   transform:translateY(100px);
 }
 
-/* 3RD - RIGHT */
+/* 3 - RIGHT SIDE */
 
 .card:nth-child(3){
   transform:translateX(120px);
@@ -377,9 +383,7 @@ body{
   transform:translate(0,0);
 }
 
-/* =========================
-   CARD PICTURE SIZE
-========================= */
+/* IMAGE SIZE */
 
 .card-picture{
   display:block;
@@ -580,7 +584,7 @@ body{
 }
 
 /* =========================
-   TOP BUTTON
+   SCROLL TOP BUTTON
 ========================= */
 
 .top-btn{
@@ -608,7 +612,7 @@ body{
 }
 
 /* =========================
-   DESKTOP / TABLET
+   DESKTOP
 ========================= */
 
 @media(min-width:700px){
@@ -674,8 +678,7 @@ body{
 
     margin:auto;
 
-    grid-template-columns:
-      1fr 1fr 1.8fr;
+    grid-template-columns:1fr 1fr 1.8fr;
 
     gap:35px;
   }
@@ -718,12 +721,13 @@ body{
     alt="Logo"
   >
 
-  <!-- HAMBURGER -->
+  <!-- 3 LINES -->
 
   <div class="menu-wrap">
 
     <button
-      class="menu"
+      class="menu-btn"
+      id="menuButton"
       type="button"
       onclick="toggleMenu()"
       aria-label="Open menu"
@@ -731,7 +735,7 @@ body{
       ☰
     </button>
 
-    <!-- DROPDOWN -->
+    <!-- ONLY HOME OPTION -->
 
     <div
       class="dropdown-menu"
@@ -740,7 +744,7 @@ body{
 
       <a
         href="#home"
-        onclick="closeMenu()"
+        onclick="homeClick()"
       >
         Home
       </a>
@@ -803,14 +807,14 @@ body{
 <div class="strip"></div>
 
 <!-- =========================
-     3 NEW HD PICTURES
+     3 HD PICTURES
 ========================= -->
 
 <section class="services">
 
   <div class="cards">
 
-    <!-- 1ST IMAGE - LEFT -->
+    <!-- 1 - LEFT -->
 
     <a
       class="card"
@@ -825,7 +829,7 @@ body{
 
     </a>
 
-    <!-- 2ND IMAGE - BOTTOM -->
+    <!-- 2 - BOTTOM -->
 
     <div class="card">
 
@@ -837,7 +841,7 @@ body{
 
     </div>
 
-    <!-- 3RD IMAGE - RIGHT -->
+    <!-- 3 - RIGHT -->
 
     <div class="card">
 
@@ -854,7 +858,7 @@ body{
 </section>
 
 <!-- =========================
-     ABOUT
+     ABOUT US
 ========================= -->
 
 <section class="about">
@@ -1009,28 +1013,35 @@ body{
 <script>
 
 /* =========================
-   HAMBURGER MENU
+   MENU
 ========================= */
 
 function toggleMenu(){
 
-  document
-    .getElementById("dropdownMenu")
-    .classList
-    .toggle("show-menu");
+  const menu =
+    document.getElementById("dropdownMenu");
+
+  menu.classList.toggle("open");
 
 }
 
-function closeMenu(){
+/* HOME CLICK */
 
-  document
-    .getElementById("dropdownMenu")
-    .classList
-    .remove("show-menu");
+function homeClick(){
+
+  const menu =
+    document.getElementById("dropdownMenu");
+
+  menu.classList.remove("open");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
-/* CLICK OUTSIDE TO CLOSE */
+/* CLICK OUTSIDE MENU */
 
 document.addEventListener(
   "click",
@@ -1044,7 +1055,10 @@ document.addEventListener(
       !menuWrap.contains(event.target)
     ){
 
-      closeMenu();
+      document
+        .getElementById("dropdownMenu")
+        .classList
+        .remove("open");
 
     }
 
@@ -1198,15 +1212,11 @@ const slides=
 
 function showSlide(){
 
-  slides.forEach(
-    function(slide){
+  slides.forEach(function(slide){
 
-      slide
-        .classList
-        .remove("active");
+    slide.classList.remove("active");
 
-    }
-  );
+  });
 
   if(slideIndex>=slides.length){
 
@@ -1216,8 +1226,7 @@ function showSlide(){
 
   if(slideIndex<0){
 
-    slideIndex=
-      slides.length-1;
+    slideIndex=slides.length-1;
 
   }
 
@@ -1247,7 +1256,7 @@ setInterval(
 );
 
 /* =========================
-   3 CARD ANIMATION
+   CARD ANIMATIONS
 ========================= */
 
 const cards =
@@ -1268,9 +1277,7 @@ const observer =
               .add("show");
 
             observer
-              .unobserve(
-                entry.target
-              );
+              .unobserve(entry.target);
 
           }
 
@@ -1299,14 +1306,9 @@ cards.forEach(
 
 function goTop(){
 
-  closeMenu();
-
   window.scrollTo({
-
     top:0,
-
     behavior:"smooth"
-
   });
 
 }
