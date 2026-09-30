@@ -8,6 +8,10 @@
 
 <style>
 
+/* =========================
+   BASIC
+========================= */
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -32,12 +36,15 @@ body{
 .main-header{
   height:90px;
   padding:0 20px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   background:#fff;
+
   position:relative;
-  z-index:10000;
+  z-index:100;
 }
 
 .main-logo{
@@ -47,88 +54,146 @@ body{
 }
 
 /* =========================
-   HAMBURGER MENU
+   HAMBURGER BUTTON
 ========================= */
-
-.menu-wrap{
-  position:relative;
-}
 
 .menu-btn{
   width:42px;
   height:42px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   background:transparent;
   border:0;
+
   color:#111;
+
   font-size:30px;
   line-height:1;
+
   cursor:pointer;
 }
 
-/* FULL HEIGHT SIDE MENU */
+/* =========================
+   DARK OVERLAY
+========================= */
 
-.dropdown-menu{
+.menu-overlay{
   position:fixed;
-  top:90px;
+
+  top:0;
+  left:0;
   right:0;
   bottom:0;
 
-  width:220px;
-  height:calc(100vh - 90px);
-
-  background:#fff;
-
-  box-shadow:-4px 5px 18px rgba(0,0,0,.20);
+  background:rgba(0,0,0,.55);
 
   opacity:0;
   visibility:hidden;
 
-  transform:translateX(100%);
-
   transition:
     opacity .3s ease,
-    transform .3s ease,
     visibility .3s ease;
 
-  z-index:9999;
+  z-index:9998;
 }
 
-.dropdown-menu.open{
+.menu-overlay.open{
   opacity:1;
   visibility:visible;
-  transform:translateX(0);
-}
-
-.dropdown-menu a{
-  display:block;
-  width:100%;
-
-  padding:18px 22px;
-
-  color:#222;
-  background:#fff;
-
-  font-size:17px;
-  text-decoration:none;
-
-  border-bottom:1px solid #eee;
-}
-
-.dropdown-menu a:hover{
-  background:#f3f3f3;
 }
 
 /* =========================
-   SEARCH AREA
+   RIGHT SIDE MENU
+========================= */
+
+.dropdown-menu{
+  position:fixed;
+
+  top:0;
+  right:0;
+
+  width:77%;
+  max-width:310px;
+
+  height:100vh;
+
+  background:#fff;
+
+  transform:translateX(100%);
+
+  transition:transform .35s ease;
+
+  box-shadow:-2px 0 8px rgba(0,0,0,.15);
+
+  z-index:9999;
+
+  overflow-y:auto;
+}
+
+.dropdown-menu.open{
+  transform:translateX(0);
+}
+
+/* =========================
+   HOME OPTION
+========================= */
+
+.dropdown-menu a{
+  display:block;
+
+  padding:52px 45px 20px;
+
+  color:#655743;
+
+  font-size:18px;
+  font-weight:bold;
+
+  text-decoration:none;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.menu-close{
+  position:absolute;
+
+  top:20px;
+  right:12px;
+
+  width:23px;
+  height:21px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+
+  background:#fff;
+
+  border:2px solid #888;
+  border-radius:2px;
+
+  color:#777;
+
+  font-size:18px;
+  font-weight:bold;
+  line-height:1;
+
+  cursor:pointer;
+}
+
+/* =========================
+   SEARCH HERO
 ========================= */
 
 .hero{
   position:relative;
 
-  /* BLUE-GREY AREA REDUCED */
   min-height:350px;
 
   padding:25px 22px;
@@ -137,6 +202,8 @@ body{
 
   overflow:hidden;
 }
+
+/* BACKGROUND LOGO */
 
 .hero::before{
   content:"";
@@ -161,8 +228,11 @@ body{
 
 .hero-inner{
   position:relative;
+
   z-index:2;
+
   max-width:1050px;
+
   margin:auto;
 }
 
@@ -178,10 +248,17 @@ body{
   font-size:25px;
 }
 
+/* =========================
+   SEARCH BOX
+========================= */
+
 .search-box label{
   display:block;
+
   margin-bottom:10px;
+
   color:#d90000;
+
   font-size:16px;
 }
 
@@ -192,6 +269,7 @@ body{
   padding:0 20px;
 
   border:1px solid #ddd;
+
   border-radius:30px;
 
   background:#fff;
@@ -223,7 +301,7 @@ body{
 }
 
 /* =========================
-   RESULT
+   SEARCH RESULT
 ========================= */
 
 .result{
@@ -259,33 +337,41 @@ body{
 
 .result-item b{
   display:block;
+
   margin-bottom:5px;
+
   color:#111;
 }
 
 .not-found{
   padding:20px;
+
   color:#b71919;
+
   font-weight:bold;
 }
 
 /* =========================
-   STRIP
+   SMALL STRIP
 ========================= */
 
 .strip{
   height:22px;
+
   background:#f1f4f8;
 }
 
 /* =========================
-   3 HD PICTURES
+   3 SERVICE PICTURES
 ========================= */
 
 .services{
   width:100%;
+
   padding:11px;
+
   background:#eeeeee;
+
   overflow:hidden;
 }
 
@@ -305,6 +391,7 @@ body{
   display:block;
 
   width:378px;
+
   max-width:100%;
 
   padding:0;
@@ -325,19 +412,19 @@ body{
     transform .85s ease;
 }
 
-/* FIRST IMAGE FROM LEFT */
+/* FIRST FROM LEFT */
 
 .card:nth-child(1){
   transform:translateX(-120px);
 }
 
-/* SECOND IMAGE FROM BOTTOM */
+/* SECOND FROM BOTTOM */
 
 .card:nth-child(2){
   transform:translateY(100px);
 }
 
-/* THIRD IMAGE FROM RIGHT */
+/* THIRD FROM RIGHT */
 
 .card:nth-child(3){
   transform:translateX(120px);
@@ -345,6 +432,7 @@ body{
 
 .card.show{
   opacity:1;
+
   transform:translate(0,0);
 }
 
@@ -361,7 +449,7 @@ body{
 }
 
 /* =========================
-   ABOUT US
+   ABOUT
 ========================= */
 
 .about{
@@ -462,7 +550,6 @@ body{
   z-index:5;
 
   width:40px;
-
   height:55px;
 
   border:0;
@@ -545,20 +632,18 @@ body{
 }
 
 /* =========================
-   TOP BUTTON
+   SCROLL TOP BUTTON
 ========================= */
 
 .top-btn{
   position:fixed;
 
   right:30px;
-
   bottom:30px;
 
   z-index:100;
 
   width:35px;
-
   height:35px;
 
   border:0;
@@ -580,6 +665,7 @@ body{
 
   .main-header{
     height:115px;
+
     padding:0 10%;
   }
 
@@ -588,15 +674,10 @@ body{
     height:80px;
   }
 
-  .dropdown-menu{
-    top:115px;
-    height:calc(100vh - 115px);
-  }
-
   .hero{
-    padding:40px 13%;
-
     min-height:350px;
+
+    padding:40px 13%;
   }
 
   .hero-title{
@@ -642,13 +723,18 @@ body{
 
     margin:auto;
 
-    grid-template-columns:1fr 1fr 1.8fr;
+    grid-template-columns:
+      1fr 1fr 1.8fr;
 
     gap:35px;
   }
 
   .slider{
     height:340px;
+  }
+
+  .dropdown-menu{
+    width:310px;
   }
 }
 
@@ -660,7 +746,9 @@ body{
 
   .card{
     opacity:1;
+
     transform:none;
+
     transition:none;
   }
 
@@ -683,36 +771,57 @@ body{
     alt="Logo"
   >
 
-  <div class="menu-wrap">
-
-    <button
-      class="menu-btn"
-      type="button"
-      onclick="toggleMenu()"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
-
-    <!-- MENU - ONLY HOME -->
-
-    <div
-      class="dropdown-menu"
-      id="dropdownMenu"
-    >
-
-      <a
-        href="#home"
-        onclick="homeClick()"
-      >
-        Home
-      </a>
-
-    </div>
-
-  </div>
+  <button
+    class="menu-btn"
+    type="button"
+    onclick="openMenu()"
+    aria-label="Open menu"
+  >
+    ☰
+  </button>
 
 </header>
+
+<!-- =========================
+     DARK OVERLAY
+========================= -->
+
+<div
+  class="menu-overlay"
+  id="menuOverlay"
+  onclick="closeMenu()"
+></div>
+
+<!-- =========================
+     RIGHT SIDE MENU
+========================= -->
+
+<div
+  class="dropdown-menu"
+  id="dropdownMenu"
+>
+
+  <!-- CLOSE -->
+
+  <button
+    class="menu-close"
+    type="button"
+    onclick="closeMenu()"
+    aria-label="Close menu"
+  >
+    ×
+  </button>
+
+  <!-- ONLY HOME -->
+
+  <a
+    href="#home"
+    onclick="homeClick()"
+  >
+    Home
+  </a>
+
+</div>
 
 <!-- =========================
      SEARCH
@@ -773,16 +882,22 @@ body{
 
   <div class="cards">
 
+    <!-- FIRST -->
+
     <a
       class="card"
       href="#licenseSearch"
     >
+
       <img
         class="card-picture"
         src="IMG_20260930_023646.jpg"
         alt="Driving License Verification"
       >
+
     </a>
+
+    <!-- SECOND -->
 
     <div class="card">
 
@@ -793,6 +908,8 @@ body{
       >
 
     </div>
+
+    <!-- THIRD -->
 
     <div class="card">
 
@@ -865,6 +982,8 @@ body{
       </p>
 
     </div>
+
+    <!-- SLIDER -->
 
     <div class="slider">
 
@@ -947,7 +1066,9 @@ body{
 
 </footer>
 
-<!-- SCROLL TOP -->
+<!-- =========================
+     TOP BUTTON
+========================= -->
 
 <button
   class="top-btn"
@@ -960,24 +1081,48 @@ body{
 <script>
 
 /* =========================
-   MENU
+   SIDE MENU
 ========================= */
 
-function toggleMenu(){
+function openMenu(){
 
   document
     .getElementById("dropdownMenu")
     .classList
-    .toggle("open");
+    .add("open");
 
+  document
+    .getElementById("menuOverlay")
+    .classList
+    .add("open");
+
+  document.body.style.overflow="hidden";
 }
 
-function homeClick(){
+
+/* CLOSE MENU */
+
+function closeMenu(){
 
   document
     .getElementById("dropdownMenu")
     .classList
     .remove("open");
+
+  document
+    .getElementById("menuOverlay")
+    .classList
+    .remove("open");
+
+  document.body.style.overflow="";
+}
+
+
+/* HOME */
+
+function homeClick(){
+
+  closeMenu();
 
   window.scrollTo({
     top:0,
@@ -986,24 +1131,15 @@ function homeClick(){
 
 }
 
-/* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+/* ESC KEY CLOSE */
 
 document.addEventListener(
-  "click",
+  "keydown",
   function(event){
 
-    const menuWrap =
-      document.querySelector(".menu-wrap");
-
-    const dropdown =
-      document.getElementById("dropdownMenu");
-
-    if(
-      menuWrap &&
-      !menuWrap.contains(event.target) &&
-      !dropdown.contains(event.target)
-    ){
-      dropdown.classList.remove("open");
+    if(event.key==="Escape"){
+      closeMenu();
     }
 
   }
@@ -1154,11 +1290,15 @@ const slides=
 
 function showSlide(){
 
-  slides.forEach(function(slide){
+  slides.forEach(
+    function(slide){
 
-    slide.classList.remove("active");
+      slide
+        .classList
+        .remove("active");
 
-  });
+    }
+  );
 
   if(slideIndex>=slides.length){
     slideIndex=0;
@@ -1194,7 +1334,7 @@ setInterval(
 );
 
 /* =========================
-   CARD ANIMATION
+   3 PICTURE ANIMATION
 ========================= */
 
 const cards =
