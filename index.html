@@ -22,6 +22,7 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:#fff;
   color:#222;
+  overflow-x:hidden;
 }
 
 /* =========================
@@ -63,12 +64,20 @@ body{
 .hero::before{
   content:"";
   position:absolute;
+
   width:230px;
   height:230px;
+
   left:50%;
   top:50%;
+
   transform:translate(-50%,-45%);
-  background:url("IMG_0957.jpeg") center/contain no-repeat;
+
+  background:
+    url("IMG_0957.jpeg")
+    center/contain
+    no-repeat;
+
   opacity:.05;
 }
 
@@ -97,24 +106,34 @@ body{
 .search-box input{
   width:100%;
   height:49px;
+
   padding:0 20px;
+
   border:1px solid #ddd;
   border-radius:30px;
+
   background:#fff;
   outline:none;
+
   font-size:15px;
 }
 
 .submit{
   width:88px;
   height:38px;
+
   margin-top:30px;
+
   background:#dc3232;
   color:#fff;
+
   border:2px solid #e8e8ee;
   border-radius:8px;
+
   font-size:16px;
+
   box-shadow:0 2px 6px rgba(0,0,0,.25);
+
   cursor:pointer;
 }
 
@@ -124,19 +143,28 @@ body{
 
 .result{
   display:none;
+
   width:100%;
   max-width:520px;
+
   margin-top:25px;
+
   background:#fff;
+
   border-radius:7px;
+
   overflow:hidden;
+
   box-shadow:0 4px 15px rgba(0,0,0,.18);
 }
 
 .result-item{
   padding:15px 18px;
+
   border-bottom:1px solid #ddd;
+
   color:#666;
+
   font-size:16px;
 }
 
@@ -166,27 +194,34 @@ body{
 }
 
 /* =========================
-   NEW HD CARDS
+   3 HD PICTURES
 ========================= */
 
 .services{
   width:100%;
   padding:11px;
   background:#eeeeee;
+  overflow:hidden;
 }
 
 .cards{
   width:100%;
+
   display:flex;
   flex-direction:column;
+
   align-items:center;
-  gap:22px;
+
+  gap:15px;
 }
+
+/* =========================
+   CARD BASE
+========================= */
 
 .card{
   display:block;
 
-  /* FULL WIDTH */
   width:378px;
   max-width:100%;
 
@@ -196,43 +231,62 @@ body{
   overflow:hidden;
 
   background:transparent;
+
   border:0;
+
   text-decoration:none;
 
   opacity:0;
-  transform:translateY(35px);
 
   transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.card.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.card:nth-child(2){
-  transition-delay:.12s;
-}
-
-.card:nth-child(3){
-  transition-delay:.24s;
+    opacity .85s ease,
+    transform .85s ease;
 }
 
 /* =========================
-   NEW HD PICTURE SIZE
+   1ST - LEFT SIDE
+========================= */
+
+.card:nth-child(1){
+  transform:translateX(-120px);
+}
+
+/* =========================
+   2ND - BOTTOM
+========================= */
+
+.card:nth-child(2){
+  transform:translateY(100px);
+}
+
+/* =========================
+   3RD - RIGHT SIDE
+========================= */
+
+.card:nth-child(3){
+  transform:translateX(120px);
+}
+
+/* =========================
+   ANIMATION END POSITION
+========================= */
+
+.card.show{
+  opacity:1;
+  transform:translate(0,0);
+}
+
+/* =========================
+   HD PICTURE SIZE
 ========================= */
 
 .card-picture{
   display:block;
 
-  /* KEEP FULL WIDTH */
   width:100%;
 
-  /* CHANGE ONLY THIS IF YOU WANT
-     MORE/LESS HEIGHT */
-  height:160px;
+  /* PICTURE HEIGHT */
+  height:175px;
 
   margin:0;
 
@@ -245,40 +299,53 @@ body{
 
 .about{
   width:100%;
+
   padding:0 23px 35px;
+
   background:#1287c4;
+
   color:#e5f3f9;
 }
 
 .about-title{
   height:65px;
+
   display:flex;
   align-items:center;
 }
 
 .about-title h2{
   color:#a80f14;
+
   font-family:Georgia,serif;
+
   font-size:30px;
+
   font-weight:800;
 }
 
 .about-grid{
   display:grid;
+
   grid-template-columns:1fr;
+
   gap:35px;
 }
 
 .about-text p,
 .features p{
   font-size:15px;
+
   line-height:1.45;
 }
 
 .features h2{
   margin-bottom:20px;
+
   color:#a80f14;
+
   font-family:Georgia,serif;
+
   font-size:28px;
 }
 
@@ -288,18 +355,25 @@ body{
 
 .slider{
   position:relative;
+
   width:100%;
   height:250px;
+
   overflow:hidden;
 }
 
 .slide{
   position:absolute;
+
   inset:0;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
+
   opacity:0;
+
   transition:opacity .7s ease;
 }
 
@@ -310,17 +384,24 @@ body{
 .prev,
 .next{
   position:absolute;
+
   top:50%;
+
   transform:translateY(-50%);
+
   z-index:5;
 
   width:40px;
   height:55px;
 
   border:0;
+
   background:rgba(0,0,0,.25);
+
   color:#fff;
+
   font-size:30px;
+
   cursor:pointer;
 }
 
@@ -338,30 +419,41 @@ body{
 
 .review{
   padding:40px 20px 50px;
+
   background:#fff;
+
   text-align:center;
 }
 
 .review h2{
   margin-bottom:25px;
+
   color:#253046;
 }
 
 .socials{
   display:flex;
+
   justify-content:center;
+
   gap:25px;
 }
 
 .social{
   width:50px;
   height:50px;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   border-radius:50%;
+
   background:#b71919;
+
   color:#fff;
+
   font-weight:bold;
 }
 
@@ -371,9 +463,13 @@ body{
 
 .footer{
   padding:25px 15px;
+
   border-top:1px solid #4fa768;
+
   text-align:center;
+
   color:#777;
+
   font-size:14px;
 }
 
@@ -383,22 +479,28 @@ body{
 
 .top-btn{
   position:fixed;
+
   right:30px;
   bottom:30px;
+
   z-index:100;
 
   width:35px;
   height:35px;
 
   border:0;
+
   background:#00008b;
+
   color:#fff;
+
   font-size:20px;
+
   cursor:pointer;
 }
 
 /* =========================
-   DESKTOP
+   DESKTOP / TABLET
 ========================= */
 
 @media(min-width:700px){
@@ -428,10 +530,15 @@ body{
 
   .cards{
     max-width:1150px;
+
     margin:auto;
+
     flex-direction:row;
+
     justify-content:center;
+
     align-items:center;
+
     gap:22px;
   }
 
@@ -442,7 +549,7 @@ body{
 
   .card-picture{
     width:100%;
-    height:160px;
+    height:175px;
   }
 
   .about{
@@ -451,8 +558,11 @@ body{
 
   .about-grid{
     max-width:1250px;
+
     margin:auto;
+
     grid-template-columns:1fr 1fr 1.8fr;
+
     gap:35px;
   }
 
@@ -533,7 +643,10 @@ body{
         Submit
       </button>
 
-      <div id="result" class="result"></div>
+      <div
+        id="result"
+        class="result"
+      ></div>
 
     </div>
 
@@ -543,17 +656,20 @@ body{
 
 <div class="strip"></div>
 
-<!-- =====================================
+<!-- =========================
      3 NEW HD PICTURES
-===================================== -->
+========================= -->
 
 <section class="services">
 
   <div class="cards">
 
-    <!-- NEW HD IMAGE 1 -->
+    <!-- 1ST - COMES FROM LEFT -->
 
-    <a class="card" href="#licenseSearch">
+    <a
+      class="card"
+      href="#licenseSearch"
+    >
 
       <img
         class="card-picture"
@@ -563,7 +679,8 @@ body{
 
     </a>
 
-    <!-- NEW HD IMAGE 2 -->
+
+    <!-- 2ND - COMES FROM BOTTOM -->
 
     <div class="card">
 
@@ -575,7 +692,8 @@ body{
 
     </div>
 
-    <!-- NEW HD IMAGE 3 -->
+
+    <!-- 3RD - COMES FROM RIGHT -->
 
     <div class="card">
 
@@ -869,13 +987,16 @@ function searchRecord(){
 
 document
 .getElementById("lic")
-.addEventListener("keydown",function(event){
+.addEventListener(
+  "keydown",
+  function(event){
 
-  if(event.key==="Enter"){
-    searchRecord();
+    if(event.key==="Enter"){
+      searchRecord();
+    }
+
   }
-
-});
+);
 
 /* =========================
    SLIDER
@@ -925,13 +1046,13 @@ setInterval(function(){
 },4000);
 
 /* =========================
-   CARD ANIMATION
+   3 CARD ANIMATION
 ========================= */
 
-const cards=
+const cards =
   document.querySelectorAll(".card");
 
-const observer=
+const observer =
   new IntersectionObserver(
 
     function(entries){
