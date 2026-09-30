@@ -37,7 +37,7 @@ body{
   justify-content:space-between;
   background:#fff;
   position:relative;
-  z-index:1000;
+  z-index:10000;
 }
 
 .main-logo{
@@ -47,7 +47,7 @@ body{
 }
 
 /* =========================
-   MENU
+   HAMBURGER MENU
 ========================= */
 
 .menu-wrap{
@@ -57,77 +57,64 @@ body{
 .menu-btn{
   width:42px;
   height:42px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:transparent;
   border:0;
-
   color:#111;
-
   font-size:30px;
   line-height:1;
-
   cursor:pointer;
 }
 
-/* MENU BOX */
+/* FULL HEIGHT SIDE MENU */
 
 .dropdown-menu{
-  position:absolute;
-
-  top:48px;
+  position:fixed;
+  top:90px;
   right:0;
+  bottom:0;
 
-  width:150px;
+  width:220px;
+  height:calc(100vh - 90px);
 
   background:#fff;
 
-  border-radius:5px;
-
-  box-shadow:0 5px 18px rgba(0,0,0,.22);
-
-  overflow:hidden;
+  box-shadow:-4px 5px 18px rgba(0,0,0,.20);
 
   opacity:0;
   visibility:hidden;
 
-  transform:translateY(-8px);
+  transform:translateX(100%);
 
   transition:
-    opacity .25s ease,
-    transform .25s ease,
-    visibility .25s ease;
+    opacity .3s ease,
+    transform .3s ease,
+    visibility .3s ease;
 
   z-index:9999;
 }
 
-/* MENU OPEN */
-
 .dropdown-menu.open{
   opacity:1;
   visibility:visible;
-  transform:translateY(0);
+  transform:translateX(0);
 }
-
-/* ONLY HOME */
 
 .dropdown-menu a{
   display:block;
-
   width:100%;
 
-  padding:15px 18px;
-
-  background:#fff;
+  padding:18px 22px;
 
   color:#222;
+  background:#fff;
 
-  font-size:16px;
-
+  font-size:17px;
   text-decoration:none;
+
+  border-bottom:1px solid #eee;
 }
 
 .dropdown-menu a:hover{
@@ -141,9 +128,10 @@ body{
 .hero{
   position:relative;
 
-  min-height:400px;
+  /* BLUE-GREY AREA REDUCED */
+  min-height:350px;
 
-  padding:35px 22px;
+  padding:25px 22px;
 
   background:#98a5c2;
 
@@ -173,16 +161,13 @@ body{
 
 .hero-inner{
   position:relative;
-
   z-index:2;
-
   max-width:1050px;
-
   margin:auto;
 }
 
 .hero-title{
-  margin-bottom:40px;
+  margin-bottom:35px;
 
   text-align:center;
 
@@ -195,11 +180,8 @@ body{
 
 .search-box label{
   display:block;
-
   margin-bottom:10px;
-
   color:#d90000;
-
   font-size:16px;
 }
 
@@ -210,7 +192,6 @@ body{
   padding:0 20px;
 
   border:1px solid #ddd;
-
   border-radius:30px;
 
   background:#fff;
@@ -224,7 +205,7 @@ body{
   width:88px;
   height:38px;
 
-  margin-top:30px;
+  margin-top:25px;
 
   background:#dc3232;
 
@@ -242,14 +223,13 @@ body{
 }
 
 /* =========================
-   SEARCH RESULT
+   RESULT
 ========================= */
 
 .result{
   display:none;
 
   width:100%;
-
   max-width:520px;
 
   margin-top:25px;
@@ -279,17 +259,13 @@ body{
 
 .result-item b{
   display:block;
-
   margin-bottom:5px;
-
   color:#111;
 }
 
 .not-found{
   padding:20px;
-
   color:#b71919;
-
   font-weight:bold;
 }
 
@@ -299,7 +275,6 @@ body{
 
 .strip{
   height:22px;
-
   background:#f1f4f8;
 }
 
@@ -309,11 +284,8 @@ body{
 
 .services{
   width:100%;
-
   padding:11px;
-
   background:#eeeeee;
-
   overflow:hidden;
 }
 
@@ -329,17 +301,13 @@ body{
   gap:15px;
 }
 
-/* CARD */
-
 .card{
   display:block;
 
   width:378px;
-
   max-width:100%;
 
   padding:0;
-
   margin:0;
 
   overflow:hidden;
@@ -357,33 +325,28 @@ body{
     transform .85s ease;
 }
 
-/* 1 - LEFT SIDE */
+/* FIRST IMAGE FROM LEFT */
 
 .card:nth-child(1){
   transform:translateX(-120px);
 }
 
-/* 2 - BOTTOM */
+/* SECOND IMAGE FROM BOTTOM */
 
 .card:nth-child(2){
   transform:translateY(100px);
 }
 
-/* 3 - RIGHT SIDE */
+/* THIRD IMAGE FROM RIGHT */
 
 .card:nth-child(3){
   transform:translateX(120px);
 }
 
-/* FINAL POSITION */
-
 .card.show{
   opacity:1;
-
   transform:translate(0,0);
 }
-
-/* IMAGE SIZE */
 
 .card-picture{
   display:block;
@@ -398,7 +361,7 @@ body{
 }
 
 /* =========================
-   ABOUT
+   ABOUT US
 ========================= */
 
 .about{
@@ -549,13 +512,11 @@ body{
 
 .social{
   width:50px;
-
   height:50px;
 
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   border-radius:50%;
@@ -584,7 +545,7 @@ body{
 }
 
 /* =========================
-   SCROLL TOP BUTTON
+   TOP BUTTON
 ========================= */
 
 .top-btn{
@@ -619,20 +580,23 @@ body{
 
   .main-header{
     height:115px;
-
     padding:0 10%;
   }
 
   .main-logo{
     width:80px;
-
     height:80px;
   }
 
-  .hero{
-    padding:55px 13%;
+  .dropdown-menu{
+    top:115px;
+    height:calc(100vh - 115px);
+  }
 
-    min-height:420px;
+  .hero{
+    padding:40px 13%;
+
+    min-height:350px;
   }
 
   .hero-title{
@@ -696,9 +660,7 @@ body{
 
   .card{
     opacity:1;
-
     transform:none;
-
     transition:none;
   }
 
@@ -721,13 +683,10 @@ body{
     alt="Logo"
   >
 
-  <!-- 3 LINES -->
-
   <div class="menu-wrap">
 
     <button
       class="menu-btn"
-      id="menuButton"
       type="button"
       onclick="toggleMenu()"
       aria-label="Open menu"
@@ -735,7 +694,7 @@ body{
       ☰
     </button>
 
-    <!-- ONLY HOME OPTION -->
+    <!-- MENU - ONLY HOME -->
 
     <div
       class="dropdown-menu"
@@ -807,29 +766,23 @@ body{
 <div class="strip"></div>
 
 <!-- =========================
-     3 HD PICTURES
+     THREE HD PICTURES
 ========================= -->
 
 <section class="services">
 
   <div class="cards">
 
-    <!-- 1 - LEFT -->
-
     <a
       class="card"
       href="#licenseSearch"
     >
-
       <img
         class="card-picture"
         src="IMG_20260930_023646.jpg"
         alt="Driving License Verification"
       >
-
     </a>
-
-    <!-- 2 - BOTTOM -->
 
     <div class="card">
 
@@ -840,8 +793,6 @@ body{
       >
 
     </div>
-
-    <!-- 3 - RIGHT -->
 
     <div class="card">
 
@@ -858,7 +809,7 @@ body{
 </section>
 
 <!-- =========================
-     ABOUT US
+     ABOUT
 ========================= -->
 
 <section class="about">
@@ -914,8 +865,6 @@ body{
       </p>
 
     </div>
-
-    <!-- SLIDER -->
 
     <div class="slider">
 
@@ -998,9 +947,7 @@ body{
 
 </footer>
 
-<!-- =========================
-     TOP BUTTON
-========================= -->
+<!-- SCROLL TOP -->
 
 <button
   class="top-btn"
@@ -1018,21 +965,19 @@ body{
 
 function toggleMenu(){
 
-  const menu =
-    document.getElementById("dropdownMenu");
-
-  menu.classList.toggle("open");
+  document
+    .getElementById("dropdownMenu")
+    .classList
+    .toggle("open");
 
 }
 
-/* HOME CLICK */
-
 function homeClick(){
 
-  const menu =
-    document.getElementById("dropdownMenu");
-
-  menu.classList.remove("open");
+  document
+    .getElementById("dropdownMenu")
+    .classList
+    .remove("open");
 
   window.scrollTo({
     top:0,
@@ -1041,7 +986,7 @@ function homeClick(){
 
 }
 
-/* CLICK OUTSIDE MENU */
+/* CLOSE MENU WHEN CLICKING OUTSIDE */
 
 document.addEventListener(
   "click",
@@ -1050,16 +995,15 @@ document.addEventListener(
     const menuWrap =
       document.querySelector(".menu-wrap");
 
+    const dropdown =
+      document.getElementById("dropdownMenu");
+
     if(
       menuWrap &&
-      !menuWrap.contains(event.target)
+      !menuWrap.contains(event.target) &&
+      !dropdown.contains(event.target)
     ){
-
-      document
-        .getElementById("dropdownMenu")
-        .classList
-        .remove("open");
-
+      dropdown.classList.remove("open");
     }
 
   }
@@ -1184,7 +1128,7 @@ function searchRecord(){
 
 }
 
-/* ENTER SEARCH */
+/* ENTER KEY SEARCH */
 
 document
 .getElementById("lic")
@@ -1193,9 +1137,7 @@ document
   function(event){
 
     if(event.key==="Enter"){
-
       searchRecord();
-
     }
 
   }
@@ -1219,15 +1161,11 @@ function showSlide(){
   });
 
   if(slideIndex>=slides.length){
-
     slideIndex=0;
-
   }
 
   if(slideIndex<0){
-
     slideIndex=slides.length-1;
-
   }
 
   slides[slideIndex]
@@ -1256,7 +1194,7 @@ setInterval(
 );
 
 /* =========================
-   CARD ANIMATIONS
+   CARD ANIMATION
 ========================= */
 
 const cards =
